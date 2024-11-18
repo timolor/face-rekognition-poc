@@ -1,0 +1,11 @@
+// tsconfig.json
+{
+    "compilerOptions": {
+      "target": "es6",
+      "module": "commonjs",
+      "outDir": "./dist",
+      "strict": true,
+      "esModuleInterop": true,
+      "allowSyntheticDefaultImports": true
+    }
+  }
