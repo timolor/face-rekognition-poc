@@ -1,3 +1,4 @@
-temp/
+src/temp/
 .env
 node_modules
+src/videos/
