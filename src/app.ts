@@ -1,27 +1,32 @@
-import { connectToDatabase } from "./config/db";
-import { createFaceCollection } from "./createFaceCollection";
-import { deleteAllFaces } from "./deleteAllFaces";
-import { indexAllAttendees } from "./indexFaces";
-import { processVideoFrames } from "./processVideoFrames";
+import { connectToDatabase } from './config/db';
+import { createFaceCollection } from './createFaceCollection';
+import { deleteAllFaces } from './deleteAllFaces';
+import { indexAllAttendees } from './indexFaces';
+import { processImages } from './processImages';
+import path from 'path';
+import getImageUris from './getImageUris';
 
 const startApp = async () => {
-  await connectToDatabase();
+	await connectToDatabase('fc', process.env.MONGO_URI!);
 
-  const bucket = process.env.S3_BUCKET!;
-  const videoPath = "src/videos/input_video.mp4";
+	const bucket = process.env.S3_BUCKET!;
 
-  const collectionId = "event-attendees";
-  //await createFaceCollection(collectionId);
+	const collectionId = 'coza-dev-event-attendees-1';
+	await createFaceCollection(collectionId);
 
+	await deleteAllFaces(process.env.REKOGNITION_COLLECTION_ID!);
 
-  await deleteAllFaces(process.env.REKOGNITION_COLLECTION_ID!);
+	// Index faces for all attendees into the collection
+	await indexAllAttendees(collectionId, bucket);
 
-   // Index faces for all attendees into the collection
-   await indexAllAttendees(collectionId, bucket);
+	const imagesDirectory = path.join(__dirname, 'images');
+	const filePaths = getImageUris(imagesDirectory);
 
-  await processVideoFrames(videoPath, bucket, 1); // Extract 1 frame per second
+	console.log({ filePaths });
 
-  console.log("Video processing complete.");
+	await processImages({ bucket, filePaths });
+
+	console.log('Image processing complete.');
 };
 
 startApp().catch(console.error);

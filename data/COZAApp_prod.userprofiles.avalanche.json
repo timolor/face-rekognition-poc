@@ -1,0 +1,1793 @@
+[
+	{
+		"_id": "6416b8eb64c8f76a6acbe237",
+		"firstName": "Badmus",
+		"lastName": "Michael",
+		"address": "No 1 Yetunde Cl Lagos",
+		"phoneNumber": "+2348136488434",
+		"email": "miidebadmus.mb@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Maria Badmus",
+		"nextOfKinPhoneNo": "+2347038306089",
+		"occupation": "Media Personnel",
+		"placeOfWork": "Lagos",
+		"gender": "M",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"instagram": "miidebadmus"
+		},
+		"birthDay": {
+			"$date": "2023-06-29T07:17:00.000Z"
+		},
+		"password": "$2a$10$vnFl2IQo/oGGo9fculh8BeXdeOrqV4XVb5DZynRCh8LC267FSXf7y",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-19T07:25:31.140Z"
+		},
+		"__v": 0,
+		"pictureUrl": "https://i.ibb.co/HCVFpmX/1154132-B-D464-4088-8-F94-45504-CB3182-C.jpg",
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=miidebadmus.mb%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.259Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.597Z"
+		}
+	},
+	{
+		"_id": "641a8447749a694632c4076c",
+		"firstName": "Adeoye",
+		"lastName": "Toluwalope",
+		"address": "18a Olayinka Street, Shadia Estate, Soluyi, Gbagada.",
+		"phoneNumber": "+2347058725271",
+		"email": "oluwaferanmi12@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Omomayowa Lawal",
+		"nextOfKinPhoneNo": "+234814 914 0015",
+		"occupation": "Software Engineering",
+		"placeOfWork": "HabariPay Limited",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"instagram": "tolu.ade"
+		},
+		"birthDay": {
+			"$date": "2023-12-15T04:27:00.000Z"
+		},
+		"password": "$2a$10$R0wEU0JspCDK0ceN/dwQBORFPa05Ea2h9AQPQKAVBf8ecFbXkelWC",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T04:29:59.270Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=oluwaferanmi12%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/zPHd9Q8/114-B7-B7-B-6-A93-46-DB-9-D40-6-E4-E8533-A8-C5.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.599Z"
+		}
+	},
+	{
+		"_id": "641a8e98749a694632c426c0",
+		"firstName": "Adekemi",
+		"lastName": "Adedoyin",
+		"address": "No 9, Ogundeko street olambe akute.",
+		"phoneNumber": "+2348100673386",
+		"email": "adekemiadedoyin64@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Adekemi Modupe",
+		"nextOfKinPhoneNo": "+2348052692188",
+		"occupation": "Finance officer",
+		"placeOfWork": "Ikeja, Allen avenue",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"instagram": "Bass.logic ",
+			"facebook": "Adekemi Adedoyin "
+		},
+		"birthDay": {
+			"$date": "2023-04-09T05:09:49.859Z"
+		},
+		"password": "$2a$08$CxRIX7weWJw3KKGN4QLKO.C3GYM2L0yg6wz5DXWL65i0VNuswgr1a",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T05:14:00.969Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=adekemiadedoyin64%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/5BB8qzv/rn-image-picker-lib-temp-71dfa823-af93-43fc-a1f4-db095c1f6b5b.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-02-05T22:11:06.552Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.599Z"
+		}
+	},
+	{
+		"_id": "641a8f71749a694632c429db",
+		"firstName": "Emmanuel",
+		"lastName": "Stephen",
+		"address": "15, Raji Abayomi street oshodi",
+		"phoneNumber": "+2349053663925",
+		"email": "emmiesteve1@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Stephen Blessing",
+		"nextOfKinPhoneNo": "+234703 207 4648",
+		"occupation": "Facility manager",
+		"placeOfWork": "Siod handcraft",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Emmanuel Steven",
+			"instagram": "@Emmysteve100"
+		},
+		"birthDay": {
+			"$date": "2023-09-28T05:06:59.485Z"
+		},
+		"password": "$2a$08$Vl8CVAVQOflOiOTWmo7ayerJ/Ht4lOG2C5HN7v9Tx5QfpenugshIe",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T05:17:37.165Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=emmiesteve1%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/qrcC7d0/rn-image-picker-lib-temp-c64d064f-1df9-4960-b4c4-1625c652e0f6.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2023-11-11T19:28:46.585Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.599Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T21:31:24.236Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T21:31:24.236Z"
+		}
+	},
+	{
+		"_id": "641a90ec749a694632c42ac9",
+		"firstName": "Olaniran",
+		"lastName": "Oladapo",
+		"address": "No 9, shasha akowonjo road egbeda Lagos.",
+		"phoneNumber": "+23408029553597",
+		"email": "olaniranoladapo@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Oladerin oluwakemisola",
+		"nextOfKinPhoneNo": "+23408055219337",
+		"occupation": "Finacial and pension consultant.",
+		"placeOfWork": "Custodian life assurance",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Olaniran oladapo ",
+			"instagram": "Dpozignature",
+			"twitter": "Dpozignature1"
+		},
+		"birthDay": {
+			"$date": "2024-01-26T05:15:33.484Z"
+		},
+		"password": "$2a$08$FNVNC7Uj2fXUCw/Qvr1ApO9S/AI6FeNKQT2Oylqt3NVKaZ3cy405q",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T05:23:56.576Z"
+		},
+		"__v": 0,
+		"pictureUrl": "https://i.ibb.co/KmkM33F/rn-image-picker-lib-temp-503f7cb2-6816-4a21-8d84-e7fcede4f073.jpg",
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=olaniranoladapo%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-08-11T07:50:31.594Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.599Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:19:57.344Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:19:57.344Z"
+		}
+	},
+	{
+		"_id": "641a9528749a694632c42c2b",
+		"firstName": "Okojesu",
+		"lastName": "Emmanuel",
+		"address": "21, Abebi Close Ojodu Berger Lagos",
+		"phoneNumber": "+2348123453449",
+		"email": "emmanuelokojesu@yahoo.comDELETED",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Temitope Okojesu",
+		"nextOfKinPhoneNo": "+2347038916261",
+		"occupation": "IT Professional",
+		"placeOfWork": "FMDQ",
+		"gender": "M",
+		"maritalStatus": "MARRIED",
+		"birthDay": {
+			"$date": "2023-08-19T05:39:29.506Z"
+		},
+		"password": "$2a$10$YYmgIuxTC7gXTxJGuvMew.qehBt3F1WB.Jk7z4AszR5vbIMEX1opq",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T05:42:00.669Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=emmanuelokojesu%40yahoo.com",
+		"pictureUrl": "https://i.ibb.co/M5WNhrC/rn-image-picker-lib-temp-3ee16090-4ae2-4c1d-a9f9-88c12ac188eb.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "DELETED",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:11.656Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-09-13T14:33:10.577Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-09-13T14:33:10.577Z"
+		},
+		"updatedAt": {
+			"$date": "2024-09-13T14:33:10.665Z"
+		}
+	},
+	{
+		"_id": "641a9d73749a694632c43325",
+		"firstName": "Popoola",
+		"lastName": "Abiodun",
+		"address": "1 salami street off Agboyi Road Alapere ketu Lagos",
+		"phoneNumber": "+2348061312234",
+		"email": "abbeyrotimi86@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Comfort Popoola",
+		"nextOfKinPhoneNo": "+2347038839505",
+		"occupation": "Business",
+		"placeOfWork": "Lagos",
+		"gender": "M",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"instagram": "@abbeyrotimi",
+			"facebook": "/abiodun Popoola"
+		},
+		"birthDay": {
+			"$date": "2023-12-31T05:09:00.000Z"
+		},
+		"pictureUrl": "https://i.ibb.co/2tL82kf/CF88-A228-BA32-4145-A523-E0-C588775562.jpg",
+		"password": "$2a$08$30qLF8TU5LVdFoZVwu1sgOBfH.yRQKVkq7X1vjtwhN0WKa/3QDBoG",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T06:17:23.875Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=abbeyrotimi86%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2023-09-29T06:37:06.708Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:11.685Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:19:02.475Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:19:02.475Z"
+		}
+	},
+	{
+		"_id": "641b060a63f52ea9ce18555b",
+		"firstName": "Uroro",
+		"lastName": "Obaji",
+		"address": "1b Towobola Street, Gbagada, Lagos",
+		"phoneNumber": "+2348032017230",
+		"email": "obajiuroro@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "641495addd786f75a803a9be",
+		"nextOfKin": "Ogechukwu Obaji",
+		"nextOfKinPhoneNo": "+2348032007230",
+		"occupation": "Public Servant",
+		"placeOfWork": "Securities and Exchange Commission",
+		"gender": "F",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"facebook": "Uroro Njoku Obaji ",
+			"instagram": "uroroobaji "
+		},
+		"birthDay": {
+			"$date": "2023-04-27T13:41:34.901Z"
+		},
+		"password": "$2a$08$ovkOQ0FcEOvsBObLe5jnlOpV094QrgCqRX2tjgnIqskJv4ciPwtGC",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T13:43:38.233Z"
+		},
+		"__v": 0,
+		"pictureUrl": "https://i.ibb.co/QCfN0hr/rn-image-picker-lib-temp-9ecf25b8-e2d3-4c5d-8867-8bb3ed5f0e25.jpg",
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=obajiuroro%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-03-27T13:59:39.326Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.266Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.600Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:18:33.571Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:18:33.571Z"
+		}
+	},
+	{
+		"_id": "641a6e70749a694632c4012d",
+		"firstName": "Oluwasegun",
+		"lastName": "Sekoni",
+		"address": "35, TE Williams Street, KFarms Estate, Fagba,  Lagos.",
+		"phoneNumber": "+2347037113946",
+		"email": "oluwasegunsekoni5@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Olasunkanmi Sekoni",
+		"nextOfKinPhoneNo": "+2349062320040",
+		"occupation": "Compliance Manager",
+		"placeOfWork": "Kuda",
+		"gender": "M",
+		"maritalStatus": "SEPARATED",
+		"socialMedia": {
+			"facebook": "Oluwasegun sekoni",
+			"instagram": "@Petevokalz",
+			"twitter": "@petevokalz"
+		},
+		"birthDay": {
+			"$date": "2023-06-10T02:53:44.807Z"
+		},
+		"password": "$2a$10$YMV7eFlJcNMw.7.fG.e3G.IjdHfYVaUwNkM9ErHBDlXuM/oVh3HS2",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T02:56:48.772Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=oluwasegunsekoni5%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/Jdy91Tq/rn-image-picker-lib-temp-b34ca8aa-9e27-486d-acae-8d2f986ccd3a.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.599Z"
+		}
+	},
+	{
+		"_id": "641a7f7e749a694632c402d3",
+		"firstName": "Oluronbi",
+		"lastName": "Toyosi",
+		"address": "23 Ajileye Street Bariga Akoka",
+		"phoneNumber": "+2347065904275",
+		"email": "yorsilawal@gmail.comDELETED",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Oluronbi Tolulope",
+		"nextOfKinPhoneNo": "+2348160817853",
+		"occupation": "Teacher",
+		"placeOfWork": "Brints Online School",
+		"gender": "F",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"facebook": "Lawal Toyosi",
+			"instagram": "@iamyorsi"
+		},
+		"birthDay": {
+			"$date": "2024-01-29T04:03:00.000Z"
+		},
+		"password": "$2a$08$62sSizrKwJrjeo4kiC3Cs./pEGlXmVXJutyXCF2Rg4olYsbDj6O8O",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T04:09:34.286Z"
+		},
+		"__v": 0,
+		"pictureUrl": "https://i.ibb.co/jkwWS5k/913841-A3-161-D-4-CA1-AC17-2-A941489-C7-AF.jpg",
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=yorsilawal%40gmail.com",
+		"secondaryDepartments": [],
+		"isCGWCApproved": false,
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"updatedAt": {
+			"$date": "2024-09-13T14:32:53.776Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "DELETED",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:12.568Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-09-13T14:32:53.687Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-09-13T14:32:53.687Z"
+		}
+	},
+	{
+		"_id": "641ab4f3749a694632c44131",
+		"firstName": "Bamgbala",
+		"lastName": "Comfort",
+		"address": "4b Adesina close, off Alhaja sidikat abubakar, harmony estate, yakoyo, ojodu Berger",
+		"phoneNumber": "+2348132832510",
+		"email": "comfortadeboyejoshua@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Ayokunle Bamgbala",
+		"nextOfKinPhoneNo": "+2347039860303",
+		"occupation": "Content creator",
+		"placeOfWork": "Self employed",
+		"gender": "F",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"facebook": "Comfort Olufunmilayo Ayo-Bamgbala ",
+			"instagram": "@olufunmijay ",
+			"twitter": "@olufunmijay"
+		},
+		"birthDay": {
+			"$date": "1986-03-22T07:52:00.000Z"
+		},
+		"pictureUrl": "https://i.ibb.co/9q0n7TV/2-C470437-E7-D3-47-CC-9-EE6-DF4-FBA4-D5486.jpg",
+		"password": "$2a$10$LnMq6/sjJ9EdKuuFtHPVju0ikGpggByW.qF6k9NovkceVrPLmj3nC",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T07:57:39.480Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=comfortadeboyejoshua%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:12.658Z"
+		}
+	},
+	{
+		"_id": "641ac69f749a694632c444ee",
+		"firstName": "Oyedokun",
+		"lastName": "Dorcas",
+		"address": "House4,oluade close,Ashamu Estates Oke-afa,Isolo.",
+		"phoneNumber": "+2348020907690",
+		"email": "tabithaaoye@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Peter Oyedokun",
+		"nextOfKinPhoneNo": "+2348032500887",
+		"occupation": "Teacher",
+		"placeOfWork": "Self employed",
+		"gender": "F",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Docas Oyedokun ",
+			"instagram": "Queentabitha "
+		},
+		"birthDay": {
+			"$date": "2023-06-21T09:13:59.212Z"
+		},
+		"password": "$2a$08$aPw2X8QrRIlIaw0BC.z8SOJQM4eTyp5Tzk.0hTQAoF4ouceQfkD9S",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T09:13:03.481Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=tabithaaoye%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/72fM5G6/rn-image-picker-lib-temp-9ed1d022-7794-483c-95d3-4a92459b6415.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-02-21T19:36:20.978Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.600Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:19:15.685Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:19:15.685Z"
+		}
+	},
+	{
+		"_id": "641aa7da749a694632c43cc8",
+		"firstName": "Adesina",
+		"lastName": "Oluwasegun",
+		"address": "32 fajumobi street miccom busstop egbeda akowonjo road.",
+		"phoneNumber": "+2348025235114",
+		"email": "drumzcakelord@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Wife",
+		"nextOfKinPhoneNo": "+234 813 629 0170",
+		"occupation": "Pastry chef",
+		"placeOfWork": "Dcl bakery and crafts",
+		"gender": "M",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"facebook": "Adesina olusegun",
+			"instagram": "drumzcakelord ",
+			"twitter": "drumzcakelord "
+		},
+		"birthDay": {
+			"$date": "2024-01-29T06:57:12.509Z"
+		},
+		"password": "$2a$08$FyQytTShbCQ2DaeUd4vV7Ot8qV5pfkg0kGEnkzFVjebPSZZaF8dsq",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T07:01:46.665Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=drumzcakelord%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/sFYmLGP/rn-image-picker-lib-temp-896c47cf-556f-40c8-8df4-7fdbce6ebf38.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-07-14T11:04:23.360Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.599Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-04T07:43:20.461Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-04T07:43:20.461Z"
+		}
+	},
+	{
+		"_id": "641ab83b749a694632c44241",
+		"firstName": "Ibukun",
+		"lastName": "Babafemi",
+		"address": "Plot 2 Shittta Aderibigbe, Maryland Ikeja",
+		"phoneNumber": "+2348136550445",
+		"email": "ibk2femmy@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Ajiboye Samuel",
+		"nextOfKinPhoneNo": "+2348092782436",
+		"occupation": "Lecturer",
+		"placeOfWork": "Covenant University",
+		"gender": "F",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"facebook": "Ajiboye Ibukun",
+			"instagram": "ibk2femmy",
+			"twitter": "ibk2femmy"
+		},
+		"birthDay": {
+			"$date": "1990-11-20T08:08:00.000Z"
+		},
+		"password": "$2a$10$Fa1sFIs2mBlfx9yIqVs4geSrkW8NPUWUrlPgpYavGPtA21.fV8ShS",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T08:11:39.264Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=ibk2femmy%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/FVYCQ28/A996-AC84-7326-4-E8-D-A106-B1-DCA97-BB93-A.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.263Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:13.521Z"
+		}
+	},
+	{
+		"_id": "641b09f263f52ea9ce186163",
+		"firstName": "Opaleye",
+		"lastName": "Bukola",
+		"address": "Iyana ipaja aboru",
+		"phoneNumber": "+2347065627851",
+		"email": "opaleyebukola215@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Opaleye olayinka",
+		"nextOfKinPhoneNo": "+2347068581703",
+		"occupation": "TELESALES",
+		"placeOfWork": "FTI CREDIT LIMITED",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Opaleye Bukola ",
+			"instagram": "@Saxobukky ",
+			"twitter": "Opaleye _Bukola "
+		},
+		"birthDay": {
+			"$date": "2023-09-02T13:56:33.568Z"
+		},
+		"password": "$2a$10$IHqYv5zO1bG//hl7tSjG/eFOPOaOHO9mNV18YB1gG2QsGt3SP8JOi",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T14:00:18.797Z"
+		},
+		"__v": 0,
+		"pictureUrl": "https://i.ibb.co/HP6TPNf/rn-image-picker-lib-temp-1846034e-d4ce-4095-9648-4d79effa00ec.jpg",
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=opaleyebukola215%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.266Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:14.027Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:19:25.414Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:19:25.414Z"
+		}
+	},
+	{
+		"_id": "641b20f49708c21c810450a9",
+		"firstName": "Ndifon",
+		"lastName": "Elvis",
+		"address": "Deji Omowo, Olowoira",
+		"phoneNumber": "+2347036296436",
+		"email": "ndifonelvis3@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Delphine Ndifon",
+		"nextOfKinPhoneNo": "+2348131389654",
+		"occupation": "Music Instructor",
+		"placeOfWork": "E String",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"birthDay": {
+			"$date": "2023-03-27T15:32:49.000Z"
+		},
+		"password": "$2a$08$x3c5BNl4alpPAEvOyScKsu0ik0MeIDGxYiz3QS1LVTSngoRbDA.Si",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T15:38:28.478Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=ndifonelvis3%40gmail.com",
+		"updatedAt": {
+			"$date": "2023-10-22T06:28:37.078Z"
+		},
+		"pictureUrl": "https://i.ibb.co/0GdskzB/rn-image-picker-lib-temp-0f83f4a7-6bc7-42c7-a41e-f11cd2b29f53.jpg",
+		"secondaryDepartments": [],
+		"isCGWCApproved": false,
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.266Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.601Z"
+		}
+	},
+	{
+		"_id": "641b22259708c21c81045111",
+		"firstName": "Adigun",
+		"lastName": "Iyinoluwa",
+		"address": "9b Olu Oshifeso Street, Yaba",
+		"phoneNumber": "+2347030243092",
+		"email": "iyinoluwaadigun@yahoo.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Grace Samuel",
+		"nextOfKinPhoneNo": "+2348056114828",
+		"occupation": "Financial Sales",
+		"placeOfWork": "EazzyTranzact",
+		"gender": "M",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"instagram": "iyinoluwaadigun"
+		},
+		"birthDay": {
+			"$date": "2023-10-15T15:39:03.184Z"
+		},
+		"password": "$2a$10$ZKe5PsvARDimlKYHrMFDn.mme9.wbJ61v9aMI.9AWpW6ZXwhjc5RK",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T15:43:33.171Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=iyinoluwaadigun%40yahoo.com",
+		"pictureUrl": "https://i.ibb.co/34SbH8G/rn-image-picker-lib-temp-1168b7a8-15b8-49aa-aebf-b5b745663318.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.266Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.601Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-04T04:36:09.633Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-04T04:36:09.633Z"
+		}
+	},
+	{
+		"_id": "641d3027be48f9d6e4c7e71c",
+		"firstName": "Ojini",
+		"lastName": "Chibuzor",
+		"address": "40, Odalume Street, Ladipo Estate, Shogunle, Oshodi-Ikeja, Lagod State, Nigeria",
+		"phoneNumber": "+2347068813930",
+		"email": "ojinichibuzor@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Ifeanyi Ojini",
+		"nextOfKinPhoneNo": "+2348097095476",
+		"occupation": "Project Executive/Entrepreneur",
+		"placeOfWork": "429, Damilola Fasade Street, Omole Phase 1, Ojodu-Berger, Lagos Nigeria",
+		"gender": "F",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Chibuzor Deborah Ojini(C.D.O)",
+			"instagram": "@itz_cdo",
+			"twitter": "@CDO_Sparklezz"
+		},
+		"birthDay": {
+			"$date": "2023-12-06T05:01:03.880Z"
+		},
+		"password": "$2a$08$QxYazsIz4CczTKv7SwvcBOEkixflK6Mb1hCCU8z94OlH7dhZyQ1hy",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-24T05:07:51.325Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=ojinichibuzor%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/HTsmjRx/rn-image-picker-lib-temp-7a5177ab-6cd6-4c15-b83f-17b5c50fee90.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.267Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:14.812Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-20T11:40:48.527Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-20T11:40:48.527Z"
+		},
+		"updatedAt": {
+			"$date": "2024-10-20T11:40:48.662Z"
+		}
+	},
+	{
+		"_id": "641c2bb7a51750a1000ab7c9",
+		"firstName": "Taiwo",
+		"lastName": "Keazor",
+		"address": "19 Usman Oyedele street onifade.Ogun state",
+		"phoneNumber": "+2347081358882",
+		"email": "keazort@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Mrs Bola Keazor",
+		"nextOfKinPhoneNo": "+2348029078324",
+		"occupation": "Verification Analyst",
+		"placeOfWork": "360Verify by Proten international",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Keazor Taiwo semilore "
+		},
+		"birthDay": {
+			"$date": "2023-07-11T10:28:41.618Z"
+		},
+		"password": "$2a$08$aiSVvIAkOnhgZ.IB4PthleP9pg2dt4uTatM/luEHMJezP/v0xw1Ry",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-23T10:36:39.108Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=keazort%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/yFtL9B6/rn-image-picker-lib-temp-77fb14a8-9625-4787-a77b-ac03b17ee3ba.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.267Z"
+		},
+		"updatedAt": {
+			"$date": "2024-07-08T19:42:16.737Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.602Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-11-19T17:37:38.704Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-11-19T17:37:38.704Z"
+		}
+	},
+	{
+		"_id": "641b631cb78a9a9b1d713a79",
+		"firstName": "Fakayode",
+		"lastName": "Adedayo",
+		"address": "5, Dele Ogundele Street, Oregun Ikeja, Lagos.",
+		"phoneNumber": "+2347036175589",
+		"email": "kdrumzadedayo@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Oluwakemi Abiodun",
+		"nextOfKinPhoneNo": "+234 703 180 5356",
+		"occupation": "Product Designer",
+		"placeOfWork": "Hello Product Limited",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Fakayode Adedayo ",
+			"instagram": "@Fakayodeadedayo_",
+			"twitter": "@Fadideas "
+		},
+		"birthDay": {
+			"$date": "1994-05-01T16:47:00.000Z"
+		},
+		"pictureUrl": "https://i.ibb.co/LhWS4W9/2-EE22377-28-B7-4005-8985-B7-C68776-A898.jpg",
+		"password": "$2a$08$wiN12FPI.wKagzsSdiT6quQ/O/5RjQFmMCegGOl8.Uvsobegrkc9q",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-22T20:20:44.604Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=kdrumzadedayo%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-07-18T23:09:05.111Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.267Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.601Z"
+		}
+	},
+	{
+		"_id": "641d2f2dbe48f9d6e4c7e4ae",
+		"firstName": "Oluwaseyi",
+		"lastName": "Royale-Akangbe",
+		"address": "26 GEORGIOUS COLE STR OFF COLLEGE RD OGBA",
+		"phoneNumber": "+2347030453892",
+		"email": "oluwaseyiabimbola4@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Esther Royale-Akangbe",
+		"nextOfKinPhoneNo": "+2348131038244",
+		"occupation": "Banker",
+		"placeOfWork": "LOTUS BANK",
+		"gender": "M",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"facebook": "Akangbe Oluwaseyi Royalty",
+			"instagram": "sey_royale",
+			"twitter": "Akangbe Oluwasey"
+		},
+		"birthDay": {
+			"$date": "2023-08-24T05:01:11.407Z"
+		},
+		"password": "$2a$08$mcWwThH3ZeEwsr38AKDqs.AfSHoctxPJU0WKi.K/.7h29JeiFwkOi",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-24T05:03:41.200Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=oluwaseyiabimbola4%40gmail.com",
+		"updatedAt": {
+			"$date": "2024-01-17T11:06:53.286Z"
+		},
+		"pictureUrl": "https://i.ibb.co/nCChqVL/rn-image-picker-lib-temp-79cc2be8-c47c-49e8-a644-56b99c392f73.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.267Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.602Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:19:42.572Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:19:42.572Z"
+		}
+	},
+	{
+		"_id": "641e18cbbe48f9d6e4c99ae0",
+		"firstName": "Ajenifuja",
+		"lastName": "Alexander",
+		"address": "2, Agbolade street. Ikosi Ketu. Lagos. Nigeria.",
+		"phoneNumber": "+2349069225696",
+		"email": "harlextom00@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Ajenifuja Lawrence",
+		"nextOfKinPhoneNo": "+2347053733479",
+		"occupation": "Professional Drummer",
+		"placeOfWork": "Studios and Live music centers",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Ayotomiwa Alexander Ajenifuja",
+			"instagram": "Alexander Ajenifuja",
+			"twitter": "@tommysohft000"
+		},
+		"birthDay": {
+			"$date": "2024-02-08T21:31:00.000Z"
+		},
+		"pictureUrl": "https://i.ibb.co/hD35jP9/BE7523-FA-E734-4878-A690-7-C5-B3-C9-D61-D7.jpg",
+		"password": "$2a$08$5UYIXJa3HrfH6dKikV1Mau05qjmE7WUyKMxqDbQPZ3kN1SJUa8nt.",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-24T21:40:27.467Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=harlextom00%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-07-07T08:26:41.423Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.268Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.603Z"
+		}
+	},
+	{
+		"_id": "641dfc66be48f9d6e4c94cfc",
+		"firstName": "Nwachukwu",
+		"lastName": "Alwell",
+		"address": "30 Majaro Street, Onike, Yaba, Lagos",
+		"phoneNumber": "+2348136511177",
+		"email": "alwellnwachukwu@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Bright Nwachukwu",
+		"nextOfKinPhoneNo": "+2348163211691",
+		"occupation": "Software Developer",
+		"placeOfWork": "Greenatech Global Solutions",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"instagram": "Welz4real"
+		},
+		"birthDay": {
+			"$date": "2023-11-12T19:33:37.063Z"
+		},
+		"password": "$2a$08$LlDbloUlLzfiAJa9Jr0u4uPdjkmOr.nq/bIjlzGQjc00xwjtfLkUC",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-24T19:39:18.769Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=alwellnwachukwu%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/BNJ7vKj/rn-image-picker-lib-temp-f6241a98-c6d7-4986-8f2c-68c5a7c073ac.jpg",
+		"secondaryDepartments": [],
+		"isCGWCApproved": false,
+		"updatedAt": {
+			"$date": "2023-10-01T15:34:39.522Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.268Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.602Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:53:03.468Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:53:03.468Z"
+		}
+	},
+	{
+		"_id": "641f27f8be48f9d6e4caaf9f",
+		"firstName": "Harriet",
+		"lastName": "Chinekezi",
+		"address": "Silicone valley Estate Lekki",
+		"phoneNumber": "+2348062908870",
+		"email": "harrietchinekezi@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Rita Chinekezi",
+		"nextOfKinPhoneNo": "+2348036756353",
+		"occupation": "Digital Creative Strategist",
+		"placeOfWork": "22 Idowu Taylor Street V.I",
+		"gender": "F",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Harriet Chinekezi ",
+			"instagram": "thisis_harriet",
+			"twitter": "keziharriet"
+		},
+		"birthDay": {
+			"$date": "2023-11-18T16:49:00.000Z"
+		},
+		"pictureUrl": "https://i.ibb.co/WxQs3x2/46-D5-FD5-B-4-B5-C-47-E7-B3-EF-A9-B65-FB5-FD2-F.jpg",
+		"password": "$2a$08$HAE8f0kO68o6irA974wrSukyRO5gjB3PHs8xzrnSD2ossK.1LfZ62",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-25T16:57:28.587Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=harrietchinekezi%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2023-09-28T18:05:03.075Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.271Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.603Z"
+		}
+	},
+	{
+		"_id": "641f5d07df572c917da28645",
+		"firstName": "Esther",
+		"lastName": "Royale-Akangbe",
+		"address": "26, Georgious cole street college road ogba lagos.",
+		"phoneNumber": "+2348131038244",
+		"email": "laryor1@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Oluwaseyi Royale - Akangbe",
+		"nextOfKinPhoneNo": "+2347030453892",
+		"occupation": "Head, Marketing Operations",
+		"placeOfWork": "Masters energy group",
+		"gender": "F",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"instagram": "Laryor1"
+		},
+		"birthDay": {
+			"$date": "1993-04-12T20:38:00.000Z"
+		},
+		"pictureUrl": "https://i.ibb.co/BBCcv5T/9-A40-F144-4556-43-BB-92-D6-5-F5-A40-D85-AB6.jpg",
+		"password": "$2a$08$o/cyMdsvOBdDhiwcaPY4zOlqEEG4BVhhzv/eiMCP.U//VwPlpNFjK",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-25T20:43:52.000Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=laryor1%40gmail.com",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-07-07T17:24:17.450Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.271Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.603Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:21:18.719Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:21:18.719Z"
+		}
+	},
+	{
+		"_id": "64254a1201a3c57a98f093ea",
+		"firstName": "Rosemary",
+		"lastName": "Unegbu",
+		"address": "No. 7 Ogunbiyi Street, Iwaya, sabo yaba",
+		"phoneNumber": "+2348103864012",
+		"email": "unegburosemaryu@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Unegbu Chigozie",
+		"nextOfKinPhoneNo": "+2349069366638",
+		"occupation": "Operations Officer",
+		"placeOfWork": "Minerva Legal",
+		"gender": "F",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Rosemary Unegbu ",
+			"instagram": "rossie_uche"
+		},
+		"birthDay": {
+			"$date": "2023-08-03T08:19:59.630Z"
+		},
+		"password": "$2a$08$D5LCJYPf6ucj/6UDjODPz.KxlV3Rd9e/ftRuwre7n9a8AnX1FvreW",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-30T08:36:34.793Z"
+		},
+		"__v": 0,
+		"pictureUrl": "https://i.ibb.co/X8kXGTZ/rn-image-picker-lib-temp-efe006a6-b2a5-470e-a2cc-6b6d4d1ed515.jpg",
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=unegburosemaryu%40gmail.com",
+		"secondaryDepartments": [],
+		"isCGWCApproved": false,
+		"updatedAt": {
+			"$date": "2023-12-24T06:02:13.568Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.272Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:22.907Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:18:49.738Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:18:49.738Z"
+		}
+	},
+	{
+		"_id": "64c25a2465b763c74fcbc6e1",
+		"firstName": "Michael",
+		"lastName": "Idris",
+		"address": "2, Osunlalu Street, okeira ogba, lagos",
+		"phoneNumber": "+23408103340661",
+		"email": "michaeldorgan23@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"secondaryDepartment": [],
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Olasimbo Aderogba",
+		"nextOfKinPhoneNo": "+2340813 219 3531",
+		"occupation": "Sales",
+		"placeOfWork": "2A, ATG House, Isaac John, ikeja GRA, Lagos",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "https://www.facebook.com/gud.smart.7"
+		},
+		"birthDay": {
+			"$date": "1989-06-20T11:42:23.532Z"
+		},
+		"pictureUrl": "https://i.ibb.co/RyNR7XC/rn-image-picker-lib-temp-d1335add-c991-4983-b6c4-a5d8880095c8.jpg",
+		"password": "$2a$08$UkQBkXxzjPyX/KpFAmrauu.5eVo7mP8uOHalFvF5uCVcLR7Z1KIpu",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-07-27T11:51:00.651Z"
+		},
+		"__v": 0,
+		"secondaryDepartments": [],
+		"updatedAt": {
+			"$date": "2024-06-23T05:52:36.989Z"
+		},
+		"isCGWCApproved": false,
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.275Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:23.772Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:20:15.781Z"
+		},
+		"lastInactiveDate": null
+	},
+	{
+		"_id": "650dbe413cbb1133f87ff829",
+		"firstName": "David",
+		"lastName": "Ikhuoshiod",
+		"address": "9 gbelegbo street, Magodo Isheri. Lagos",
+		"phoneNumber": "+23408111121911",
+		"email": "ikhuoshiod@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"secondaryDepartments": [],
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Jacque Ikhuoshio",
+		"nextOfKinPhoneNo": "+23407033194943",
+		"occupation": "Student",
+		"placeOfWork": "Covenant University",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Nil",
+			"instagram": "_.ikhuoshio._",
+			"twitter": "Nil"
+		},
+		"birthDay": {
+			"$date": "2024-02-25T16:13:00.000Z"
+		},
+		"pictureUrl": "https://i.ibb.co/m0QtX2Y/87-F0-A71-C-577-C-4904-8326-FA77-F9-B90250.jpg",
+		"password": "$2a$10$.OZMYutcgwKwItIx3gqVyuyLS8GhtvyL2//X0qzBs6qEnv6C1OxLi",
+		"isVerified": false,
+		"isActivated": true,
+		"isCGWCApproved": false,
+		"createdAt": {
+			"$date": "2023-09-22T16:18:09.241Z"
+		},
+		"__v": 0,
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.275Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:24.552Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-03T18:21:30.694Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-03T18:21:30.694Z"
+		}
+	},
+	{
+		"_id": "641fe794e5403d9096231511",
+		"firstName": "Memuletiwon",
+		"lastName": "Maureen",
+		"address": "Ogba",
+		"phoneNumber": "08116868555",
+		"email": "m.memuletiwon@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Kelvin Memuletiwon",
+		"nextOfKinPhoneNo": "07061951554",
+		"occupation": "Civil servant",
+		"placeOfWork": "Ikeja",
+		"gender": "F",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Maureen Olamide",
+			"instagram": "Maureen_mide"
+		},
+		"birthDay": {
+			"$date": "2023-04-13T06:31:33.849Z"
+		},
+		"password": "$2a$10$A/V.cd2YJxLBpxWxTPoGVe8sU3TYtbKbnJEMG4Hom9tygoiUIAH9G",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-26T06:35:00.346Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=m.memuletiwon%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/TtnRqV0/rn-image-picker-lib-temp-1cc3bbe6-d99c-4112-afa3-f5b88f2accfd.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.271Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.603Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-04T07:41:34.529Z"
+		},
+		"lastInactiveDate": {
+			"$date": "2024-10-04T07:41:34.529Z"
+		}
+	},
+	{
+		"_id": "64c2680365b763c74fcbc719",
+		"firstName": "Daniel",
+		"lastName": "Gabriel",
+		"address": "14, pastor jemigbon close apollo estate ketu lagos.",
+		"phoneNumber": "+23408137518508",
+		"email": "daniel.sgabriel98@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"secondaryDepartment": [],
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Peter",
+		"nextOfKinPhoneNo": "+23408092606401",
+		"occupation": "Digital marketing",
+		"placeOfWork": "Ikeja GRA Lagos",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Daniel N.Sunny Gabriel ",
+			"instagram": "danie_sings2",
+			"twitter": "danie_tweets"
+		},
+		"birthDay": {
+			"$date": "1994-10-30T12:35:11.516Z"
+		},
+		"pictureUrl": "https://i.ibb.co/k4DpK49/rn-image-picker-lib-temp-7bdb17be-29f7-42fd-8e8a-8083889cecca.jpg",
+		"password": "$2a$08$5grfDrMLvSUe53VIvkHTiOGtA3pbkRL0Fza4N3rRJQfwQHhw4L9km",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-07-27T12:50:11.259Z"
+		},
+		"__v": 0,
+		"secondaryDepartments": [],
+		"isCGWCApproved": false,
+		"updatedAt": {
+			"$date": "2024-07-17T15:38:22.786Z"
+		},
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.275Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.608Z"
+		}
+	},
+	{
+		"_id": "6426e75e01a3c57a98f28349",
+		"firstName": "Igharosa",
+		"lastName": "Faith",
+		"address": "11 Ola Bello, Off Doyin Omolulo, Alapere",
+		"phoneNumber": "07032322443",
+		"email": "iziengbeewanlen@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Percy Igharosa",
+		"nextOfKinPhoneNo": "07036360162",
+		"occupation": "Coach for special intervention/content writer",
+		"placeOfWork": "Berkley Academy",
+		"gender": "F",
+		"maritalStatus": "MARRIED",
+		"socialMedia": {
+			"facebook": "Izyfaith Ewanlen Igharosa",
+			"instagram": "Iziengbeofficial",
+			"twitter": "Faithigharosa"
+		},
+		"birthDay": {
+			"$date": "2023-10-13T13:55:36.318Z"
+		},
+		"password": "$2a$10$W74k..w7UcqNRTlvA7Alx.czj/91UMh6ekxE6g.L/vv7v3/L8OCZS",
+		"isVerified": false,
+		"isActivated": true,
+		"createdAt": {
+			"$date": "2023-03-31T13:59:58.309Z"
+		},
+		"__v": 0,
+		"qrCodeUrl": "https://api.qrserver.com/v1/create-qr-code/?data=https://coza-app-web.onrender.com/?email=iziengbeewanlen%40gmail.com",
+		"pictureUrl": "https://i.ibb.co/1fq1sL9/rn-image-picker-lib-temp-99ab2447-f992-4b08-8354-0e18dc8a1c42.jpg",
+		"isCGWCApproved": false,
+		"secondaryDepartments": [],
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.273Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:27.636Z"
+		}
+	},
+	{
+		"_id": "65913aa9b47552d1d5b42d21",
+		"firstName": "Olabode",
+		"lastName": "Olaleye",
+		"address": "19,Amodu Crescent, Akute",
+		"phoneNumber": "+23408023184100",
+		"email": "olabodefolk@yahoo.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"secondaryDepartments": [],
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Funke Olaleye",
+		"nextOfKinPhoneNo": "+23408065613461",
+		"occupation": "Musician",
+		"placeOfWork": "COZA",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "",
+			"instagram": "Olabodefolk ",
+			"twitter": ""
+		},
+		"birthDay": {
+			"$date": "2024-01-10T09:49:51.801Z"
+		},
+		"password": "$2a$08$nqMuZ7C4g0uRC8l0fOpw6OXcRkvCH7rGWCjvNYMQ0y5lA9U9siRCO",
+		"isVerified": false,
+		"isActivated": true,
+		"isCGWCApproved": false,
+		"createdAt": {
+			"$date": "2023-12-31T09:55:53.168Z"
+		},
+		"__v": 0,
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.276Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-27T23:00:28.833Z"
+		},
+		"dormantStreak": 0,
+		"inactiveStreak": 0,
+		"lastDormantDate": {
+			"$date": "2024-10-08T18:31:57.284Z"
+		},
+		"lastInactiveDate": null,
+		"updatedAt": {
+			"$date": "2024-11-06T16:42:57.975Z"
+		}
+	},
+	{
+		"_id": "6591548ab47552d1d5b4904d",
+		"firstName": "Favour",
+		"lastName": "Ogberefor",
+		"address": "21, Aderemi Adedigba Street, Agric Ikorodu",
+		"phoneNumber": "+23409125422404",
+		"email": "phavurogberefor@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"secondaryDepartments": [],
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Emmanuel Ogberefor",
+		"nextOfKinPhoneNo": "+23408064757216",
+		"occupation": "Student",
+		"placeOfWork": "University of Lagos",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Favour Ogberefor",
+			"instagram": "@thesavvypianist",
+			"twitter": "@og_savvvy"
+		},
+		"birthDay": {
+			"$date": "2024-07-06T11:42:03.239Z"
+		},
+		"pictureUrl": "https://i.ibb.co/8xt1nM3/rn-image-picker-lib-temp-65473c49-ed2a-4a02-943e-acd9e120756a.jpg",
+		"password": "$2a$10$bEzMYFf.67DhaSJ0xhJoe.8aR2VJpkV9XzH.lEa2abbV7/xb7Gs/.",
+		"isVerified": false,
+		"isActivated": true,
+		"isCGWCApproved": false,
+		"createdAt": {
+			"$date": "2023-12-31T11:46:18.821Z"
+		},
+		"__v": 0,
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.276Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.608Z"
+		}
+	},
+	{
+		"_id": "65e59dcaebec7ec1cef40412",
+		"firstName": "Johnson",
+		"lastName": "Elijah",
+		"address": "17 Victoria street ogudu",
+		"phoneNumber": "+2348112688755",
+		"email": "chubbyjohnson4@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"secondaryDepartments": [],
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Abasi",
+		"nextOfKinPhoneNo": "+2348112688755",
+		"occupation": "Fashion stylist and Tailor",
+		"placeOfWork": "Tunics by Elior",
+		"gender": "M",
+		"maritalStatus": "SINGLE",
+		"socialMedia": {
+			"facebook": "Elior Hadar",
+			"instagram": "Poppah_bear ",
+			"twitter": "Eliorhada"
+		},
+		"birthDay": {
+			"$date": "1994-12-24T10:05:36.080Z"
+		},
+		"pictureUrl": "https://i.ibb.co/NyxC62G/rn-image-picker-lib-temp-9fc806ca-3614-4867-bf43-c0117e9ac566.jpg",
+		"password": "$2a$10$KosNe7bttJz2B9z3DyeT0e83jf38/rwwPpbjrwgUJOWvLeiUyzoc2",
+		"isVerified": false,
+		"isActivated": true,
+		"isCGWCApproved": false,
+		"createdAt": {
+			"$date": "2024-03-04T10:09:14.871Z"
+		},
+		"__v": 0,
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.276Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "INACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-10-30T23:00:30.174Z"
+		}
+	},
+	{
+		"_id": "65e8a961ebec7ec1cef68f36",
+		"firstName": "Ifeoluwa",
+		"lastName": "Obasun",
+		"address": "No 4 ariyo street Ojodu Berger Lagos",
+		"phoneNumber": "+23407068244231",
+		"email": "obasunifeoluwa@gmail.com",
+		"departmentId": "6414d6841cbe4cc79e1552d0",
+		"secondaryDepartments": [],
+		"campusId": "641497441cbe4cc79e155179",
+		"roleId": "64149597dd786f75a803a9bc",
+		"nextOfKin": "Obasun Kehinde",
+		"nextOfKinPhoneNo": "+23408055787718",
+		"occupation": "Virtual assistant",
+		"placeOfWork": "Penzaarville Africa",
+		"gender": "F",
+		"maritalStatus": "SINGLE",
+		"birthDay": {
+			"$date": "2024-06-24T17:33:00.000Z"
+		},
+		"password": "$2a$08$XXyk4W2uDnB6PWD2Ay3xfeNQiKF7A20rnIBYic8BEzt76PLDtchzq",
+		"isVerified": false,
+		"isActivated": true,
+		"isCGWCApproved": false,
+		"createdAt": {
+			"$date": "2024-03-06T17:35:29.804Z"
+		},
+		"__v": 0,
+		"blacklistedAt": {
+			"$date": "2024-08-01T00:00:02.276Z"
+		},
+		"updatedAt": {
+			"$date": "2024-07-14T05:52:04.182Z"
+		},
+		"subTenantId": {
+			"$oid": "66c4e2e3ce5e7635f8c2ba7b"
+		},
+		"status": "ACTIVE",
+		"statusUpdatedAt": {
+			"$date": "2024-08-30T00:00:56.608Z"
+		}
+	}
+]
