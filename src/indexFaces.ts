@@ -3,7 +3,7 @@ import { Attendee, IAttendee } from './models/attendee';
 // import { getAppUsersWithPictureUrl } from './getUsers';
 import { getImageBlob } from './getImageBlob';
 import { connectToDatabase, fcdbUri } from './config/db';
-import dummyData from '../data/coza.users.guzape.json';
+import dummyData from './data/coza.users.guzape.json';
 
 const rekognition = new AWS.Rekognition();
 
