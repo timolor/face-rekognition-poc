@@ -11,13 +11,13 @@ const startApp = async () => {
 
 	const bucket = process.env.S3_BUCKET!;
 
-	const collectionId = 'coza-dev-event-attendees-1';
-	await createFaceCollection(collectionId);
+	const collectionId = process.env.REKOGNITION_COLLECTION_ID!;
+	// await createFaceCollection(collectionId);
 
-	await deleteAllFaces(process.env.REKOGNITION_COLLECTION_ID!);
+	// await deleteAllFaces(process.env.REKOGNITION_COLLECTION_ID!);
 
-	// Index faces for all attendees into the collection
-	await indexAllAttendees(collectionId, bucket);
+	// // Index faces for all attendees into the collection
+	// await indexAllAttendees(collectionId, bucket);
 
 	const imagesDirectory = path.join(__dirname, 'images');
 	const filePaths = getImageUris(imagesDirectory);

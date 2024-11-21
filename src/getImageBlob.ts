@@ -1,4 +1,6 @@
 import fs from 'fs/promises';
+import axios from 'axios';
+
 
 /**
  * Fetch an image as a blob from a given URL.
@@ -7,15 +9,19 @@ import fs from 'fs/promises';
  */
 
 export const getImageBlob = async (url: string): Promise<ArrayBuffer> => {
-	try {
-		const response = await fetch(url);
 
-		if (!response.ok) {
+	try {
+		console.log(`image url: ${url}`);
+		// const response = await fetch(url);
+		const response = await axios.get(url, { responseType: 'arraybuffer' });
+
+		if (response.status < 200 && response.status > 299) {
 			throw new Error(`Failed to fetch image. Status: ${response.status}`);
 		}
 
-		const blob = (await response.blob()).arrayBuffer();
-		return blob;
+		// const blob = (await response.blob()).arrayBuffer();
+		// return blob;
+		return response.data;
 	} catch (error) {
 		console.error(`Error fetching image blob: ${error}`);
 		throw error;

@@ -40,7 +40,7 @@ export const getAttendees = async (): Promise<Array<IAttendee>> => {
 			.find({ pictureUrl: { $exists: true, $ne: '' } })
 			.toArray();
 
-		console.log({ attendees });
+		// console.log({ attendees });
 
 		return attendees as any;
 	} catch (error) {
