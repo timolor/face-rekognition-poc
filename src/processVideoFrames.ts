@@ -26,7 +26,7 @@ export const processVideoFrames = async (videoPath: string, bucket: string, fram
       await uploadToS3(bucket, frameKey, frameBuffer);
 
       // Match face in frame
-      const result = await searchFaceByImage(bucket, frameKey);
+      const result = await searchFaceByImage({bucket, key: frameKey});
 
       if (result.FaceMatches?.length) {
         for (const match of result.FaceMatches) {

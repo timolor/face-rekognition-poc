@@ -4,3 +4,4 @@ node_modules
 src/videos/
 src/images
 src/.DS_Store
+dist/

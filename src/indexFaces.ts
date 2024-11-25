@@ -26,15 +26,15 @@ export const indexFace = async ({ collectionId, bucket, imageKey, imageUrl, atte
 		Image:
 			bucket && imageKey
 				? { S3Object: { Bucket: bucket, Name: imageKey } }
-				: { Bytes: await getImageBlob(imageUrl as string) }, // Fallback to fetch blob if not hosted on S3
-		ExternalImageId: attendeeId, // Store attendee ID with face for later matching
+				: { Bytes: await getImageBlob(imageUrl as string) },
+		ExternalImageId: attendeeId, 
 		MaxFaces: 1,
 		QualityFilter: 'AUTO',
 	};
 
 	try {
 		const response = await rekognition.indexFaces(params).promise();
-		console.log(`Indexed face for attendee ${attendeeId}`, response);
+		console.log(`Indexed face for member ${attendeeId}`, response);
 		return response;
 	} catch (error) {
 		console.error('Error indexing face:', error);
@@ -53,8 +53,6 @@ export const indexAllAttendees = async (collectionId: string, bucket?: string) =
 
 	const fcdb = await connectToDatabase('fc', fcdbUri); // Connect to the database
 	const attendees = await fcdb.collection('attendees').find().toArray();
-
-	// console.log({ attendees });
 
 	//TODO: To improve performance, setup concurrency here (we can use pLimit)
 	for (const attendee of attendees as any) {
@@ -86,32 +84,32 @@ export const indexAllAttendees = async (collectionId: string, bucket?: string) =
  * @param collectionId - The ID of the Rekognition collection.
  * @param bucket - The S3 bucket where profile pictures are stored.
  */
-export const indexAttendees = async (collectionId: string, bucket: string) => {
-	//TODO: After massive initial seeding, we can incrementally seed only new users added to the app/database
-	// await seedNewAttendees();
+// export const indexAttendees = async (collectionId: string, bucket: string) => {
+// 	//TODO: After massive initial seeding, we can incrementally seed only new users added to the app/database
+// 	// await seedNewAttendees();
 
-	const attendees = await Attendee.find(); // Get new attendees from DB
+// 	const attendees = await Attendee.find(); // Get new attendees from DB
 
-	//TODO: Index only new attendees after massive initial seeding
-	//TODO: To improve performance, setup concurrency here (we can use pLimit)
-	for (const attendee of attendees) {
-		const result = await indexFace({
-			collectionId,
-			imageUrl: attendee.profile_picture,
-			attendeeId: attendee._id.toString(),
-		});
+// 	//TODO: Index only new attendees after massive initial seeding
+// 	//TODO: To improve performance, setup concurrency here (we can use pLimit)
+// 	for (const attendee of attendees) {
+// 		const result = await indexFace({
+// 			collectionId,
+// 			imageUrl: attendee.profile_picture,
+// 			attendeeId: attendee._id.toString(),
+// 		});
 
-		if (result.FaceRecords?.length) {
-			if (result.FaceRecords[0].Face) {
-				console.log(`faceId: ${result.FaceRecords[0].Face.FaceId!}`);
-				attendee.faceId = result.FaceRecords[0].Face.FaceId!;
-				// await attendee.save();
-			}
-		}
-	}
+// 		if (result.FaceRecords?.length) {
+// 			if (result.FaceRecords[0].Face) {
+// 				console.log(`faceId: ${result.FaceRecords[0].Face.FaceId!}`);
+// 				attendee.faceId = result.FaceRecords[0].Face.FaceId!;
+// 				// await attendee.save();
+// 			}
+// 		}
+// 	}
 
-	console.log('All faces indexed.');
-};
+// 	console.log('All faces indexed.');
+// };
 
 const seedAttendees = async () => {
 	try {

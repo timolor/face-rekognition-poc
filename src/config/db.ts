@@ -3,16 +3,16 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-// export const connectToDatabase = async () => {
-// 	try {
-// 		const dbUri = process.env.MONGO_URI!;
-// 		console.log('MongoDB connected successfully.');
-// 		return await mongoose.connect(dbUri); // Options no longer needed
-// 	} catch (error) {
-// 		console.error('MongoDB connection failed:', error);
-// 		process.exit(1);
-// 	}
-// };
+export const connectToDefaultDatabase = async () => {
+	try {
+		const dbUri = process.env.MONGO_URI!;
+		await mongoose.connect(dbUri);
+		console.log('MongoDB connected successfully.');
+	} catch (error) {
+		console.error('MongoDB connection failed:', error);
+		process.exit(1);
+	}
+};
 
 const connections: Record<string, Connection> = {}; // Cache connections by database name
 
