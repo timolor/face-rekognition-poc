@@ -33,7 +33,10 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 				const match = fcdb.collection('match');
 	
 				await match.insertOne({
-					attendeeId: matchedFaceId,
+					memberId: matchedFaceId,
+					serviceId: data?.serviceId,
+					serviceName: data?.serviceName,
+					campusName: data?.campusName,
 					timestamp: new Date(),
 				});
 	
