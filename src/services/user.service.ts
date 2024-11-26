@@ -4,6 +4,7 @@ import { IUser, UserResponse } from "../models/user";
 import axios, { AxiosResponse } from 'axios';
 
 const COZA_API_BASE_URL = process.env.COZA_API_BASE_URL || "http://localhost:7003/api/v1/"
+const COZA_API_JWT = process.env.COZA_API_JWT!;
 const collectionId = process.env.REKOGNITION_COLLECTION_ID!;
 
 
@@ -46,7 +47,9 @@ export class UserService {
             let config = {
                 method: 'get',
                 url: `${COZA_API_BASE_URL}user/list`,
-                headers: { 'accept': '*/*' }
+                headers: { 'accept': '*/*', 
+                    'Authorization': `Bearer ${COZA_API_JWT}` 
+                }
             };
 
             const response: AxiosResponse<UserResponse> = await axios.request(config);
@@ -61,7 +64,7 @@ export class UserService {
     }
 
     async updateIndexedMember(userId: string, faceId: string): Promise<IUser[]> {
-        console.log("++ about to update memeber");
+        console.log(`about to update member: ${userId} and faceId: ${faceId}`);
         try {
             let data = JSON.stringify({
                 "isFaceIndexed": true,
@@ -72,7 +75,8 @@ export class UserService {
                 url: `${COZA_API_BASE_URL}user/profile/update/${userId}`,
                 headers: {
                     'accept': '*/*',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${COZA_API_JWT}` 
                 },
                 data: data
             };
