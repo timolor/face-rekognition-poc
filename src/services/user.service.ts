@@ -42,7 +42,7 @@ export class UserService {
         try {
             let config = {
                 method: 'get',
-                url: `${COZA_API_BASE_URL}user/list?page=1&pageSize=100&=10000`,
+                url: `${COZA_API_BASE_URL}user/list?page=${global.counter}&pageSize=100`,
                 headers: { 'accept': '*/*', 
                     'Authorization': `Bearer ${COZA_API_JWT}` 
                 }
@@ -50,6 +50,7 @@ export class UserService {
 
             const response: AxiosResponse<UserResponse> = await axios.request(config);
             if (response.status === 200 && response.data.data.users.length > 0) {
+                global.counter++;
                 return response.data.data.users;
             }
             throw new HttpException(404, "User not found");
