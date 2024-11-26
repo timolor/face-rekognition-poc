@@ -65,7 +65,7 @@ export class UserService {
         try {
             let data = JSON.stringify({
                 "isFaceIndexed": true,
-                "faceId": faceId
+                "indexedFaceId": faceId
             });
             let config = {
                 method: 'put',
