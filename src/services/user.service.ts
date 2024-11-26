@@ -15,8 +15,9 @@ export class UserService {
 
         const members: IUser[] = await this.getMembers();
         for (const member of members) {
-            if (!member.profile_picture || member.profile_picture.trim() === "") continue;
-            if(member.isFaceIndexed) continue;
+            console.log(`members count: ${members.length}`);
+            if (!member.profile_picture) continue;
+            // if(member.isFaceIndexed) continue;
             try {
 
                 const result = await indexFace({
