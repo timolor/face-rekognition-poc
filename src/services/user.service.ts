@@ -14,10 +14,7 @@ export class UserService {
 
 
         const members: IUser[] = await this.getMembers();
-        let i = 0;
-        console.log("collectionId", collectionId)
         for (const member of members) {
-            i++;
             if (!member.profile_picture || member.profile_picture.trim() === "") continue;
             if(member.isFaceIndexed) continue;
             try {
@@ -37,7 +34,6 @@ export class UserService {
             } catch (error) {
                 console.log("failed to index member: ", member)
             }
-            if (i > 9) break;
         }
         return members;
     }
