@@ -15,9 +15,8 @@ export class UserService {
 
         const members: IUser[] = await this.getMembers();
         for (const member of members) {
-            console.log(`members count: ${members.length}`);
-            if (!member.profile_picture) continue;
-            // if(member.isFaceIndexed) continue;
+            if (!member.profile_picture || member.profile_picture.trim() === "") continue;
+            if(member.isFaceIndexed) continue;
             try {
 
                 const result = await indexFace({
@@ -43,7 +42,7 @@ export class UserService {
         try {
             let config = {
                 method: 'get',
-                url: `${COZA_API_BASE_URL}user/list`,
+                url: `${COZA_API_BASE_URL}user/list?page=1&pageSize=100&=10000`,
                 headers: { 'accept': '*/*', 
                     'Authorization': `Bearer ${COZA_API_JWT}` 
                 }
