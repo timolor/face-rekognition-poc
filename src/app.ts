@@ -11,6 +11,7 @@ import express, { Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
 import { errorMiddleware } from './middleware/error.middleware';
 import attendanceRoutes from './routes/attendance.routes';
+import cors from 'cors';
 
 declare global {
 	var counter: number;
@@ -20,6 +21,8 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3000;
+
+app.use(cors());
 
 connectToDefaultDatabase();
 
