@@ -1,27 +1,62 @@
-import { connectToDatabase } from "./config/db";
-import { createFaceCollection } from "./createFaceCollection";
-import { deleteAllFaces } from "./deleteAllFaces";
-import { indexAllAttendees } from "./indexFaces";
-import { processVideoFrames } from "./processVideoFrames";
+import { connectToDatabase, connectToDefaultDatabase } from './config/db';
+import { createFaceCollection } from './createFaceCollection';
+import { deleteAllFaces } from './deleteAllFaces';
+import { indexAllAttendees } from './indexFaces';
+import { processImages } from './processImages';
+import userRoutes from './routes/user.routes';
+import path from 'path';
+import getImageUris from './getImageUris';
 
-const startApp = async () => {
-  await connectToDatabase();
+import express, { Request, Response, NextFunction } from 'express';
+import dotenv from 'dotenv';
+import { errorMiddleware } from './middleware/error.middleware';
+import attendanceRoutes from './routes/attendance.routes';
 
-  const bucket = process.env.S3_BUCKET!;
-  const videoPath = "src/videos/input_video.mp4";
+dotenv.config();
 
-  const collectionId = "event-attendees";
-  //await createFaceCollection(collectionId);
+const app = express();
+const port = process.env.PORT || 3000;
 
+connectToDefaultDatabase();
 
-  await deleteAllFaces(process.env.REKOGNITION_COLLECTION_ID!);
+app.use(express.json());
 
-   // Index faces for all attendees into the collection
-   await indexAllAttendees(collectionId, bucket);
+app.get('/', (req: Request, res: Response) => {
+	res.send('Hello, World!');
+});
 
-  await processVideoFrames(videoPath, bucket, 1); // Extract 1 frame per second
+app.use('/api/v1/user', userRoutes);
+app.use('/api/v1/attendance', attendanceRoutes);
 
-  console.log("Video processing complete.");
-};
+app.use((err: any, req: Request, res: Response, next: NextFunction) => {
+	errorMiddleware(err, req, res, next);
+});
 
-startApp().catch(console.error);
+app.listen(port, () => {
+	console.log(`Server is running at http://localhost:${port}`);
+});
+
+// const startApp = async () => {
+// 	await connectToDatabase('fc', process.env.MONGO_URI!);
+
+// 	const bucket = process.env.S3_BUCKET!;
+
+// 	const collectionId = process.env.REKOGNITION_COLLECTION_ID!;
+// 	// await createFaceCollection(collectionId);
+
+// 	// await deleteAllFaces(process.env.REKOGNITION_COLLECTION_ID!);
+
+// 	// // Index faces for all attendees into the collection
+// 	// await indexAllAttendees(collectionId, bucket);
+
+// 	const imagesDirectory = path.join(__dirname, 'images');
+// 	const filePaths = getImageUris(imagesDirectory);
+
+// 	console.log({ filePaths });
+
+// 	await processImages({ bucket, filePaths });
+
+// 	console.log('Image processing complete.');
+// };
+
+// startApp().catch(console.error);

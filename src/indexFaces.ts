@@ -1,5 +1,9 @@
-import AWS from "aws-sdk";
-import { Attendee } from "./models/attendee";
+import AWS from 'aws-sdk';
+import { Attendee, IAttendee } from './models/attendee';
+// import { getAppUsersWithPictureUrl } from './getUsers';
+import { getImageBlob } from './getImageBlob';
+import { connectToDatabase, fcdbUri } from './config/db';
+import dummyData from '../src/data/coza.users.guzape.json';
 
 const rekognition = new AWS.Rekognition();
 
@@ -8,26 +12,34 @@ const rekognition = new AWS.Rekognition();
  * @param collectionId - The ID of the Rekognition collection to store faces.
  * @param bucket - The S3 bucket where images are stored.
  */
-export const indexFace = async (collectionId: string, bucket: string, imageKey: string, attendeeId: string) => {
-  const params = {
-    CollectionId: collectionId,
-    Image: {
-      S3Object: {
-        Bucket: bucket,
-        Name: imageKey,
-      },
-    },
-    ExternalImageId: attendeeId, // Store attendee ID with face for later matching
-  };
 
-  try {
-    const response = await rekognition.indexFaces(params).promise();
-    console.log(`Indexed face for attendee ${attendeeId}`, response);
-    return response;
-  } catch (error) {
-    console.error("Error indexing face:", error);
-    throw error;
-  }
+interface IndexFaceArgs {
+	collectionId: string;
+	bucket?: string;
+	imageKey?: string;
+	imageUrl?: string;
+	attendeeId: string;
+}
+export const indexFace = async ({ collectionId, bucket, imageKey, imageUrl, attendeeId }: IndexFaceArgs) => {
+	const params = {
+		CollectionId: collectionId,
+		Image:
+			bucket && imageKey
+				? { S3Object: { Bucket: bucket, Name: imageKey } }
+				: { Bytes: await getImageBlob(imageUrl as string) },
+		ExternalImageId: attendeeId, 
+		MaxFaces: 1,
+		QualityFilter: 'AUTO',
+	};
+
+	try {
+		const response = await rekognition.indexFaces(params).promise();
+		console.log(`Indexed face for member ${attendeeId}`, response);
+		return response;
+	} catch (error) {
+		console.error('Error indexing face:', error);
+		throw error;
+	}
 };
 
 /**
@@ -35,81 +47,96 @@ export const indexFace = async (collectionId: string, bucket: string, imageKey: 
  * @param collectionId - The ID of the Rekognition collection.
  * @param bucket - The S3 bucket where profile pictures are stored.
  */
-export const indexAllAttendees = async (collectionId: string, bucket: string) => {
-  await seedAttendees();
-  const attendees = await Attendee.find(); // Get all attendees from DB
-  // const attendees = dummyAttendees;
-  for (const attendee of attendees) {
-    const result = await indexFace(collectionId, bucket, attendee.profilePicture, attendee._id.toString());
-    if (result.FaceRecords?.length) {
-      if(result.FaceRecords[0].Face){
-        console.log(`faceId: ${result.FaceRecords[0].Face.FaceId!}`)
-        attendee.faceId = result.FaceRecords[0].Face.FaceId!;
-        await attendee.save();
-      }
-    }
-  }
+export const indexAllAttendees = async (collectionId: string, bucket?: string) => {
+	//TODO: After massive initial seed, we can incrementally seed only new users added to the app/database
+	//await seedAttendees();
 
-  console.log("All faces indexed.");
+	const fcdb = await connectToDatabase('fc', fcdbUri); // Connect to the database
+	const attendees = await fcdb.collection('attendees').find().toArray();
+
+	//TODO: To improve performance, setup concurrency here (we can use pLimit)
+	for (const attendee of attendees as any) {
+		try{
+			const result = await indexFace({
+				collectionId,
+				imageUrl: attendee.profile_picture,
+				attendeeId: attendee._id.toString(),
+			});
+	
+			if (result.FaceRecords?.length) {
+				if (result.FaceRecords[0].Face) {
+					console.log(`faceId: ${result.FaceRecords[0].Face.FaceId!}`);
+					attendee.faceId = result.FaceRecords[0].Face.FaceId!;
+					// await attendee.save();
+				}
+			}
+		}catch(error){
+			console.error(error);
+		}
+		
+	}
+
+	console.log('All faces indexed.');
 };
 
-const dummyAttendees = [
-  {
-    _id: '636198b2752d51bc96f1cdea',
-    name: 'Mane Doe',
-    email: 'mane.doe@example.com',
-    // profilePicture: 'pp/teb.png', // S3 key
-    profilePicture: 'pp/kk.jpeg', // S3 key
-  },
-  // {
-  //   _id: '2',
-  //   name: 'Jane Smith',
-  //   email: 'jane.smith@example.com',
-  //   profilePicture: 'profile-pictures/jane-smith.jpg', // S3 key
-  // },
-  // {
-  //   _id: '3',
-  //   name: 'Mike Johnson',
-  //   email: 'mike.johnson@example.com',
-  //   profilePicture: 'profile-pictures/mike-johnson.jpg', // S3 key
-  // },
-  // {
-  //   _id: '4',
-  //   name: 'Emily Brown',
-  //   email: 'emily.brown@example.com',
-  //   profilePicture: 'profile-pictures/emily-brown.jpg', // S3 key
-  // },
-  // {
-  //   _id: '5',
-  //   name: 'Chris Lee',
-  //   email: 'chris.lee@example.com',
-  //   profilePicture: 'profile-pictures/chris-lee.jpg', // S3 key
-  // },
-  // {
-  //   _id: '6',
-  //   name: 'Anna Davis',
-  //   email: 'anna.davis@example.com',
-  //   profilePicture: 'profile-pictures/anna-davis.jpg', // S3 key
-  // },
-  // {
-  //   _id: '7',
-  //   name: 'David Wilson',
-  //   email: 'david.wilson@example.com',
-  //   profilePicture: 'profile-pictures/david-wilson.jpg', // S3 key
-  // },
-  // {
-  //   _id: '8',
-  //   name: 'Sarah Miller',
-  //   email: 'sarah.miller@example.com',
-  //   profilePicture: 'profile-pictures/sarah-miller.jpg', // S3 key
-  // },
-];
+/**
+ * Index faces for all attendees in the collection
+ * @param collectionId - The ID of the Rekognition collection.
+ * @param bucket - The S3 bucket where profile pictures are stored.
+ */
+// export const indexAttendees = async (collectionId: string, bucket: string) => {
+// 	//TODO: After massive initial seeding, we can incrementally seed only new users added to the app/database
+// 	// await seedNewAttendees();
+
+// 	const attendees = await Attendee.find(); // Get new attendees from DB
+
+// 	//TODO: Index only new attendees after massive initial seeding
+// 	//TODO: To improve performance, setup concurrency here (we can use pLimit)
+// 	for (const attendee of attendees) {
+// 		const result = await indexFace({
+// 			collectionId,
+// 			imageUrl: attendee.profile_picture,
+// 			attendeeId: attendee._id.toString(),
+// 		});
+
+// 		if (result.FaceRecords?.length) {
+// 			if (result.FaceRecords[0].Face) {
+// 				console.log(`faceId: ${result.FaceRecords[0].Face.FaceId!}`);
+// 				attendee.faceId = result.FaceRecords[0].Face.FaceId!;
+// 				// await attendee.save();
+// 			}
+// 		}
+// 	}
+
+// 	console.log('All faces indexed.');
+// };
 
 const seedAttendees = async () => {
-  try {
-    await Attendee.insertMany(dummyAttendees);
-    console.log('Dummy attendees added successfully!');
-  } catch (error) {
-    console.error('Error inserting dummy attendees:', error);
-  }
-}
+	try {
+		const payload = dummyData;
+		// await getAppUsersWithPictureUrl();
+
+		const appUsers = payload;
+		// .filter((user: any) => !!user.pictureUrl)
+		// .map<Partial<IAttendee>>((user: any) => {
+		// 	return {
+		// 		_id: (user._id as any).toString(),
+		// 		firstName: user.firstName,
+		// 		lastName: user.lastName,
+		// 		email: user.email,
+		// 		pictureUrl: user.pictureUrl,
+		// 		faceId: user.faceId,
+		// 	};
+		// });
+
+		// console.log('App Users -->', appUsers);
+
+		const fcdb = await connectToDatabase('fc', fcdbUri); // Connect to the database
+		const attendees = fcdb.collection('attendees');
+
+		await attendees.insertMany(appUsers as any);
+		console.log('Attendees added successfully!');
+	} catch (error) {
+		console.error('Error inserting attendees:', error);
+	}
+};

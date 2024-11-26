@@ -1,5 +1,6 @@
 import AWS from "aws-sdk";
 
+AWS.config.update({ region: process.env.AWS_REGION! });
 const rekognition = new AWS.Rekognition();
 
 export const createFaceCollection = async (collectionId: string) => {
