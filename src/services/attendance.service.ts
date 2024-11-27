@@ -20,7 +20,7 @@ export class AttendanceService {
 
         const imagePaths = await listImagesInBucket(data.bucket, data.folderPath);
 
-        const resp = processImages({ bucket: data.bucket, imageKeys: imagePaths, serviceAttendanceId: savedUser._id.toString() });
+        const resp = processImages({ bucket: data.bucket, imageKeys: imagePaths, serviceAttendanceId: savedUser._id.toString(), data });
 
     }
 

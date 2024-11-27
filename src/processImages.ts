@@ -19,6 +19,7 @@ interface IProcessImage {
 
 export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, data, serviceAttendanceId }: IProcessImage) => {
 	let faceMatched = 0;
+	let photoUploadCount = 0;
 	try{
 		const handleMatch = async (result: PromiseResult<Rekognition.SearchFacesByImageResponse, AWSError>) => {
 			if (result?.FaceMatches && result.FaceMatches.length > 0) {
@@ -52,6 +53,7 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 	
 		//TODO: To improve performance, setup concurrency here (we can use pLimit)
 		if (imageKeys) {
+			photoUploadCount = imageKeys.length;
 			for (const key of imageKeys) {
 				const result = await searchFaceByImage({ bucket, key });
 				await handleMatch(result);
@@ -60,6 +62,7 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 	
 		//TODO: To improve performance, setup concurrency here (we can use pLimit)
 		if (imageUrls && imageUrls?.length > 0) {
+			photoUploadCount = imageUrls.length;
 			for (const imageUrl of imageUrls) {
 				const result = await searchFaceByImage({ imageUrl });
 				await handleMatch(result);
@@ -68,6 +71,7 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 	
 		//TODO: To improve performance, setup concurrency here (we can use pLimit)
 		if (filePaths && filePaths?.length > 0) {
+			photoUploadCount = filePaths.length;
 			for (const filePath of filePaths) {
 				const result = await searchFaceByImage({ filePath });
 				console.log({ searchFaceByImage: result });
@@ -78,7 +82,8 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 		const serviceAttendance = await ServiceAttendanceModel.findById(serviceAttendanceId);
 		if(!serviceAttendance) return;
 		serviceAttendance.status = "completed";
-		serviceAttendance.photoUploadCount = faceMatched;
+		serviceAttendance.photoUploadCount = photoUploadCount;
+		serviceAttendance.matchCount = faceMatched;
 		serviceAttendance.processEndTime = new Date();
 		serviceAttendance?.save()
 	
