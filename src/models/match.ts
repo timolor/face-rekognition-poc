@@ -2,11 +2,19 @@ import mongoose, { Schema, Document } from 'mongoose';
 
 export interface IMatch extends Document {
 	attendeeId: string; // MongoDB ObjectId of the attendee
+	serviceId: string;
+	campusId: string;
+	serviceName: string;
+	campusName: string;
 	timestamp: Date;
 }
 
 const MatchSchema: Schema = new Schema({
-	attendeeId: { type: mongoose.Schema.Types.ObjectId, ref: 'Attendee', required: true },
+	memberId: { type: mongoose.Schema.Types.ObjectId, ref: 'Attendee', required: true },
+	serviceId: { type: String },
+	campusId: { type: String },
+	serviceName: { type: String },
+	campusName: { type: String },
 	timestamp: { type: Date, default: Date.now },
 });
 

@@ -6,5 +6,6 @@ const attendanceController = new AttendanceController();
 
 router.post("/match-members", attendanceController.matchMembers);
 router.get("/get-processes", attendanceController.getServiceAttendance)
+router.get("/service/attendees", attendanceController.getAttendees)
 
 export default router;

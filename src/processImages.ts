@@ -36,6 +36,7 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 				await match.insertOne({
 					memberId: matchedFaceId,
 					serviceId: data?.serviceId,
+					campusId: data?.campusId,
 					serviceName: data?.serviceName,
 					campusName: data?.campusName,
 					timestamp: new Date(),

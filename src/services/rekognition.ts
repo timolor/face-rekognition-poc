@@ -6,6 +6,13 @@ export interface IIndexFace extends IProcessFace {
 	externalId: string;
 }
 
+export interface Face {
+    FaceId: string;
+    ExternalImageId?: string;
+    Confidence: number;
+    Timestamp: number;
+}
+
 export const indexFace = async ({ bucket, key, externalId, imageUrl, filePath }: IIndexFace) => {
 	const params = {
 		CollectionId: process.env.REKOGNITION_COLLECTION_ID!,
@@ -39,3 +46,36 @@ export const searchFaceByImage = async ({ bucket, key, imageUrl, filePath }: IPr
 
 	return rekognition.searchFacesByImage(params).promise();
 };
+
+export async function listFaces(collectionId: string): Promise<Face[]> {
+	const params: AWS.Rekognition.ListFacesRequest = {
+	  CollectionId: collectionId,
+	  MaxResults: 1000, // Optional: Adjust max results if needed
+	};
+  
+	try {
+	  let faces: Face[] = [];
+	  let nextToken: string | undefined = undefined;
+  
+	  // Paginate through the results if necessary
+	  do {
+		if (nextToken) {
+		  params.NextToken = nextToken;
+		}
+  
+		const response: any = await rekognition.listFaces(params).promise();
+		faces = faces.concat(response.Faces || []);
+  
+		// If there is a next token, get the next page of results
+		nextToken = response.NextToken;
+	  } while (nextToken);
+  
+	  // Log the list of faces
+	  console.log(faces);
+	  return faces;
+	} catch (error) {
+	  console.error('Error listing faces:', error);
+	}
+	return [];
+  }
+  

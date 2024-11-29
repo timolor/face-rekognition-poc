@@ -46,6 +46,7 @@ export const mapToServiceAttendance = (
     request: ServiceAttendanceRequest,
   ): ServiceAttendance => {
     const serviceAttendance = new ServiceAttendanceModel({
+      campusId: request.campusId,
       serviceId: request.serviceId,
       serviceName: request.serviceName,
       campusName: request.campusName,

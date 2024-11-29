@@ -6,10 +6,12 @@ import { deleteImagesInFolder, listImagesInBucket } from "./s3";
 import { processImages } from "../processImages";
 import { ServiceAttendanceRequest } from "../controllers/attendance.controller";
 import ServiceAttendanceModel, { mapToServiceAttendance, ServiceAttendance } from "../models/service-attendance";
+import { listFaces } from "./rekognition";
+import { Face } from "aws-sdk/clients/rekognition";
 
 const COZA_API_BASE_URL = process.env.COZA_API_BASE_URL || "http://localhost:7003/api/v1/"
+const COZA_API_JWT = process.env.COZA_API_JWT!
 const collectionId = process.env.REKOGNITION_COLLECTION_ID!;
-
 
 export class AttendanceService {
 
@@ -29,7 +31,10 @@ export class AttendanceService {
             let config = {
                 method: 'get',
                 url: `${COZA_API_BASE_URL}user/list`,
-                headers: { 'accept': '*/*' }
+                headers: { 
+                    'accept': '*/*',  
+                    'Authorization': `Bearer ${COZA_API_JWT}`
+                }
             };
 
             const response: AxiosResponse<UserResponse> = await axios.request(config);
@@ -55,7 +60,8 @@ export class AttendanceService {
                 url: `${COZA_API_BASE_URL}user/profile/update/${userId}`,
                 headers: {
                     'accept': '*/*',
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${COZA_API_JWT}`
                 },
                 data: data
             };
@@ -90,5 +96,15 @@ export class AttendanceService {
         const serviceAttendances = await ServiceAttendanceModel.find(query).skip(skip).limit(limit);
 
         return { serviceAttendances };
+    }
+
+    async getIndexedFaces(){
+
+        const indexedFaces: Face[] = await listFaces(collectionId);
+        for(const indexFace of indexedFaces as any){
+            await this.updateIndexedMember(indexFace.ExternalImageId, indexFace.FaceId);
+        }
+
+        return indexedFaces;
     }
 }
