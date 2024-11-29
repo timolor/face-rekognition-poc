@@ -89,6 +89,8 @@ export class AttendanceService {
             query.$or = [
                 { campusName: { $regex: regex } },
                 { serviceName: { $regex: regex } },
+                { campusId: { $regex: regex } },
+                { serviceId: { $regex: regex } },
             ];
         }
 
