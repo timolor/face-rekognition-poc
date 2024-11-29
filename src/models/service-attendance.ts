@@ -5,6 +5,7 @@ export interface ServiceAttendance extends Document {
   _id: string;
   serviceId: string;
   serviceName: string;
+  campusId: string;
   campusName: string;
   serviceStartTime: Date;
   processStartTime: Date;
@@ -19,6 +20,7 @@ export interface ServiceAttendance extends Document {
 const ServiceAttendanceSchema: Schema = new Schema(
   {
     serviceId: { type: String, required: true },
+    campusId: { type: String, required: true },
     serviceName: { type: String, required: true },
     campusName: { type: String, required: true },
     serviceStartTime: { type: Date, required: true },

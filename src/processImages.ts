@@ -85,6 +85,7 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 		serviceAttendance.status = "completed";
 		serviceAttendance.photoUploadCount = photoUploadCount;
 		serviceAttendance.matchCount = faceMatched;
+		serviceAttendance.campusId = data?.campusId ? data.campusId : "N/A";
 		serviceAttendance.processEndTime = new Date();
 		serviceAttendance?.save()
 	
