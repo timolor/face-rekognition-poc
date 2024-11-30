@@ -125,6 +125,22 @@ export const deleteImagesInFolder = async (bucketName: string, folderPath: strin
   }
 }
 
+export const getImageBufferFromS3 = async (bucketName: string, key: string): Promise<Buffer> => {
+  const params = {
+    Bucket: bucketName,
+    Key: key,
+  };
+
+  try {
+    const data = await s3.getObject(params).promise();
+   
+    return data.Body as Buffer;
+  } catch (err) {
+    console.error('Error fetching image from S3:', err);
+    throw new Error('Could not retrieve the image from S3.');
+  }
+}
+
 const isImage = (fileName: string): boolean => {
   const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif', '.bmp', '.webp'];
   return imageExtensions.some((ext) => fileName.toLowerCase().endsWith(ext));

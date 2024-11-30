@@ -66,6 +66,7 @@ export class AttendanceController {
     const search = req.query.search as string;
     const serviceId = req.query.serviceId as string;
     const campusId = req.query.campusId as string;
+    const serviceAttendanceId = req.query.serviceAttendanceId as string;
 
     try {
 
@@ -73,7 +74,7 @@ export class AttendanceController {
         throw new HttpException(400, "One or more required fields are missing");
       }
 
-      const users = await this.userService.fetchServiceAttendees(page, limit, search, serviceId, campusId);
+      const users = await this.userService.fetchServiceAttendees(page, limit, search, serviceId, campusId, serviceAttendanceId);
 
       const data = {
         users,

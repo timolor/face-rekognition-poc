@@ -7,10 +7,10 @@ export interface IIndexFace extends IProcessFace {
 }
 
 export interface Face {
-    FaceId: string;
-    ExternalImageId?: string;
-    Confidence: number;
-    Timestamp: number;
+	FaceId: string;
+	ExternalImageId?: string;
+	Confidence: number;
+	Timestamp: number;
 }
 
 export const indexFace = async ({ bucket, key, externalId, imageUrl, filePath }: IIndexFace) => {
@@ -31,51 +31,68 @@ export interface IProcessFace {
 	key?: string;
 	filePath?: string;
 	imageUrl?: string;
+	imageBuffer?: Buffer
 }
 
-export const searchFaceByImage = async ({ bucket, key, imageUrl, filePath }: IProcessFace) => {
+export const searchFaceByImage = async ({ bucket, key, imageUrl, filePath, imageBuffer }: IProcessFace) => {
 	const params: Rekognition.SearchFacesByImageRequest = {
 		CollectionId: process.env.REKOGNITION_COLLECTION_ID!,
-		Image:
-			bucket && key
+		Image: imageBuffer
+			? { Bytes: imageBuffer}
+			: bucket && key
 				? { S3Object: { Bucket: bucket, Name: key } }
 				: { Bytes: filePath ? await getLocalImageBlob(filePath) : await getImageBlob(imageUrl as string) },
-		MaxFaces: 100, 
-		FaceMatchThreshold: 20,
+		MaxFaces: 100,
+		FaceMatchThreshold: 98,
 	};
 	const resp = await rekognition.searchFacesByImage(params).promise();
 	return resp;
 };
 
+export const detectFaceByImage = async ({ imageBuffer }: IProcessFace) => {
+	const params: Rekognition.DetectFacesRequest = {
+		Image: {
+			Bytes: imageBuffer,
+		},
+		Attributes: ['ALL'],
+	};
+	try {
+		const resp = await rekognition.detectFaces(params).promise();
+		return resp.FaceDetails || [];
+	} catch (error) {
+		console.error('Error detecting faces:', error);
+		throw error;
+	}
+};
+
 export async function listFaces(collectionId: string): Promise<Face[]> {
 	const params: AWS.Rekognition.ListFacesRequest = {
-	  CollectionId: collectionId,
-	  MaxResults: 1000, // Optional: Adjust max results if needed
+		CollectionId: collectionId,
+		MaxResults: 1000, // Optional: Adjust max results if needed
 	};
-  
+
 	try {
-	  let faces: Face[] = [];
-	  let nextToken: string | undefined = undefined;
-  
-	  // Paginate through the results if necessary
-	  do {
-		if (nextToken) {
-		  params.NextToken = nextToken;
-		}
-  
-		const response: any = await rekognition.listFaces(params).promise();
-		faces = faces.concat(response.Faces || []);
-  
-		// If there is a next token, get the next page of results
-		nextToken = response.NextToken;
-	  } while (nextToken);
-  
-	  // Log the list of faces
-	  console.log(faces);
-	  return faces;
+		let faces: Face[] = [];
+		let nextToken: string | undefined = undefined;
+
+		// Paginate through the results if necessary
+		do {
+			if (nextToken) {
+				params.NextToken = nextToken;
+			}
+
+			const response: any = await rekognition.listFaces(params).promise();
+			faces = faces.concat(response.Faces || []);
+
+			// If there is a next token, get the next page of results
+			nextToken = response.NextToken;
+		} while (nextToken);
+
+		// Log the list of faces
+		console.log(faces);
+		return faces;
 	} catch (error) {
-	  console.error('Error listing faces:', error);
+		console.error('Error listing faces:', error);
 	}
 	return [];
-  }
-  
+}

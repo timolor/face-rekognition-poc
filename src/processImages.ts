@@ -1,10 +1,12 @@
-import { searchFaceByImage } from './services/rekognition';
-import { Match } from './models/match';
+import { detectFaceByImage, searchFaceByImage } from './services/rekognition';
 import { PromiseResult } from 'aws-sdk/lib/request';
 import { AWSError, Rekognition } from 'aws-sdk';
 import { connectToDatabase, fcdbUri } from './config/db';
 import { ServiceAttendanceRequest } from './controllers/attendance.controller';
 import ServiceAttendanceModel from './models/service-attendance';
+import { getImageBufferFromS3 } from './services/s3';
+import { extractFaceImage } from './imageUtil';
+import { getLocalImageBlob } from './getImageBlob';
 // import { Attendee } from './models/attendee';
 
 interface IProcessImage {
@@ -52,8 +54,20 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 		if (imageKeys) {
 			photoUploadCount = imageKeys.length;
 			for (const key of imageKeys) {
-				const result = await searchFaceByImage({ bucket, key });
-				await handleMatch(result);
+				const imageBuffer = await getImageBufferFromS3(bucket!, key);
+				const facesDetected = await detectFaceByImage({ imageBuffer });
+
+				for (const detectedFace of facesDetected) {
+					try {
+						const boundingBox = detectedFace.BoundingBox;
+						const faceImageBytes = await extractFaceImage(imageBuffer, boundingBox!);
+						const result = await searchFaceByImage({ bucket, imageBuffer: faceImageBytes });
+						await handleMatch(result);
+					} catch (err) {
+						console.log("error in searchFaceByImage: ", err);
+					}
+
+				}
 			}
 		}
 
@@ -70,9 +84,22 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 		if (filePaths && filePaths?.length > 0) {
 			photoUploadCount = filePaths.length;
 			for (const filePath of filePaths) {
-				const result = await searchFaceByImage({ filePath });
-				console.log({ searchFaceByImage: result });
-				await handleMatch(result);
+
+
+				const imageBuffer = await getLocalImageBlob(filePath);
+
+				const facesDetected = await detectFaceByImage({ imageBuffer: Buffer.from(imageBuffer) });
+
+				for (const detectedFace of facesDetected) {
+					try {
+						const boundingBox = detectedFace.BoundingBox;
+						const faceImageBytes = await extractFaceImage(Buffer.from(imageBuffer), boundingBox!);
+						const result = await searchFaceByImage({ bucket, imageBuffer: faceImageBytes });
+						await handleMatch(result);
+					} catch (err) {
+						console.log("error in searchFaceByImage: ", err);
+					}
+				}
 			}
 		}
 
@@ -91,3 +118,4 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 	}
 
 };
+

@@ -1,9 +1,9 @@
 import { connectToDatabase, fcdbUri } from "../config/db";
 import { HttpException } from "../errors/HttpException";
 import { indexFace } from "../indexFaces";
-import { IMatch, Match } from "../models/match";
 import { IUser, UserResponse } from "../models/user";
 import axios, { AxiosResponse } from 'axios';
+import ServiceAttendanceModel, {  } from "../models/service-attendance";
 
 const COZA_API_BASE_URL = process.env.COZA_API_BASE_URL || "http://localhost:7003/api/v1/"
 const COZA_API_JWT = process.env.COZA_API_JWT!;
@@ -46,14 +46,15 @@ export class UserService {
         return members;
     }
 
-    async fetchServiceAttendees(page: number, limit: number, search: string, serviceId: string, campusId: string): Promise<IUser[]> {
-        console.log(`serviceId: ${serviceId}, campusId: ${campusId}`)
+    async fetchServiceAttendees(page: number, limit: number, search: string, serviceId: string, campusId: string, serviceAttendanceId: string): Promise<IUser[]> {
+        console.log(`serviceId: ${serviceId}, campusId: ${campusId}, serviceAttendanceId: ${serviceAttendanceId}, limit: ${limit}`)
         //get all matched faces for campus and service
+        const serviceAttendance = await ServiceAttendanceModel.findById(serviceAttendanceId);
         const fcdb = await connectToDatabase('fc', fcdbUri);
 		const match = fcdb.collection('match');
-        const matches = await match.find({ serviceId, campusId }).toArray();
-
-        const users = await this.getUsers(page, limit, campusId);
+        const matches = await match.find({ serviceId: serviceAttendance?.serviceId, campusId: serviceAttendance?.campusId }).toArray();
+        
+        const users = await this.getUsers(page, limit, serviceAttendance?.campusId);
 
         const matchAttendeeIds = new Set(matches.map(match => match.memberId.toString()));
         for (const user of users) {
