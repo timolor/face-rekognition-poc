@@ -44,9 +44,6 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 						campusName: data?.campusName,
 						timestamp: new Date(),
 					});
-
-
-
 				}
 			}
 		};
@@ -92,5 +89,5 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 	} catch (error) {
 		console.error('Error during processImages task:', error);
 	}
-	
+
 };

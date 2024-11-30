@@ -22,8 +22,8 @@ export class AttendanceService {
 
         const imagePaths = await listImagesInBucket(data.bucket, data.folderPath);
 
-        // const resp = processImages({ bucket: data.bucket, imageKeys: imagePaths, serviceAttendanceId: savedUser._id.toString(), data });
-        const resp = processImages({filePaths: ["./src/images/face_count_test.png"], serviceAttendanceId: savedUser._id.toString(), data })
+        const resp = processImages({ bucket: data.bucket, imageKeys: imagePaths, serviceAttendanceId: savedUser._id.toString(), data });
+        // const resp = processImages({filePaths: ["./src/images/face_count_test.png"], serviceAttendanceId: savedUser._id.toString(), data })
 
     }
 
