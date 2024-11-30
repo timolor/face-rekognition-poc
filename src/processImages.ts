@@ -20,38 +20,37 @@ interface IProcessImage {
 export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, data, serviceAttendanceId }: IProcessImage) => {
 	let faceMatched = 0;
 	let photoUploadCount = 0;
-	try{
+	try {
 		const handleMatch = async (result: PromiseResult<Rekognition.SearchFacesByImageResponse, AWSError>) => {
 			if (result?.FaceMatches && result.FaceMatches.length > 0) {
-				const matchedFaceId = result.FaceMatches[0].Face?.ExternalImageId;
-				faceMatched++;
-				console.log({ matchedFaceId });
-	
-				// TODO: Possibly add more details from Attendee record
-				// const attendee = await Attendee.findOne({ _id: matchedFaceId }).lean();
-	
-				const fcdb = await connectToDatabase('fc', fcdbUri); // Connect to the database
-				const match = fcdb.collection('match');
-	
-				await match.insertOne({
-					memberId: matchedFaceId,
-					serviceId: data?.serviceId,
-					campusId: data?.campusId,
-					serviceName: data?.serviceName,
-					campusName: data?.campusName,
-					timestamp: new Date(),
-				});
-	
-				// const match = new Match({
-				// 	attendeeId: matchedFaceId,
-				// 	timestamp: new Date(),
-				// 	// ...attendee,
-				// });
-	
-				// await match.save();
+				for (const faceMatch of result?.FaceMatches) {
+
+
+					const matchedFaceId = faceMatch.Face?.ExternalImageId;
+					faceMatched++;
+					console.log({ matchedFaceId });
+
+					// TODO: Possibly add more details from Attendee record
+					// const attendee = await Attendee.findOne({ _id: matchedFaceId }).lean();
+
+					const fcdb = await connectToDatabase('fc', fcdbUri); // Connect to the database
+					const match = fcdb.collection('match');
+
+					await match.insertOne({
+						memberId: matchedFaceId,
+						serviceId: data?.serviceId,
+						campusId: data?.campusId,
+						serviceName: data?.serviceName,
+						campusName: data?.campusName,
+						timestamp: new Date(),
+					});
+
+
+
+				}
 			}
 		};
-	
+
 		//TODO: To improve performance, setup concurrency here (we can use pLimit)
 		if (imageKeys) {
 			photoUploadCount = imageKeys.length;
@@ -60,7 +59,7 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 				await handleMatch(result);
 			}
 		}
-	
+
 		//TODO: To improve performance, setup concurrency here (we can use pLimit)
 		if (imageUrls && imageUrls?.length > 0) {
 			photoUploadCount = imageUrls.length;
@@ -69,7 +68,7 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 				await handleMatch(result);
 			}
 		}
-	
+
 		//TODO: To improve performance, setup concurrency here (we can use pLimit)
 		if (filePaths && filePaths?.length > 0) {
 			photoUploadCount = filePaths.length;
@@ -79,19 +78,18 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 				await handleMatch(result);
 			}
 		}
-		
+
 		const serviceAttendance = await ServiceAttendanceModel.findById(serviceAttendanceId);
-		if(!serviceAttendance) return;
+		if (!serviceAttendance) return;
 		serviceAttendance.status = "completed";
 		serviceAttendance.photoUploadCount = photoUploadCount;
 		serviceAttendance.matchCount = faceMatched;
 		serviceAttendance.campusId = data?.campusId ? data.campusId : "N/A";
 		serviceAttendance.processEndTime = new Date();
 		serviceAttendance?.save()
-	
 
 		console.log('Image processing completed.');
-	}catch(error){
+	} catch (error) {
 		console.error('Error during processImages task:', error);
 	}
 	

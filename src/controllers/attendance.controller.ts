@@ -62,7 +62,7 @@ export class AttendanceController {
 
   public getAttendees = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
     const page = parseInt(req.query.page as string) || 1;
-    const limit = parseInt(req.query.limit as string) || 10;
+    const limit = parseInt(req.query.limit as string) || 100000;
     const search = req.query.search as string;
     const serviceId = req.query.serviceId as string;
     const campusId = req.query.campusId as string;

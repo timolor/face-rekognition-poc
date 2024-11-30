@@ -40,11 +40,11 @@ export const searchFaceByImage = async ({ bucket, key, imageUrl, filePath }: IPr
 			bucket && key
 				? { S3Object: { Bucket: bucket, Name: key } }
 				: { Bytes: filePath ? await getLocalImageBlob(filePath) : await getImageBlob(imageUrl as string) },
-		MaxFaces: 20, 
-		FaceMatchThreshold: 80,
+		MaxFaces: 100, 
+		FaceMatchThreshold: 20,
 	};
-
-	return rekognition.searchFacesByImage(params).promise();
+	const resp = await rekognition.searchFacesByImage(params).promise();
+	return resp;
 };
 
 export async function listFaces(collectionId: string): Promise<Face[]> {

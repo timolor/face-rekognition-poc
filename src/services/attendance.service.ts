@@ -22,7 +22,8 @@ export class AttendanceService {
 
         const imagePaths = await listImagesInBucket(data.bucket, data.folderPath);
 
-        const resp = processImages({ bucket: data.bucket, imageKeys: imagePaths, serviceAttendanceId: savedUser._id.toString(), data });
+        // const resp = processImages({ bucket: data.bucket, imageKeys: imagePaths, serviceAttendanceId: savedUser._id.toString(), data });
+        const resp = processImages({filePaths: ["./src/images/face_count_test.png"], serviceAttendanceId: savedUser._id.toString(), data })
 
     }
 
@@ -95,7 +96,7 @@ export class AttendanceService {
         }
 
 
-        const serviceAttendances = await ServiceAttendanceModel.find(query).skip(skip).limit(limit);
+        const serviceAttendances = await ServiceAttendanceModel.find(query).sort({createdAt: -1}).skip(skip).limit(limit);
 
         return { serviceAttendances };
     }

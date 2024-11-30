@@ -30,6 +30,7 @@ export const indexFace = async ({ collectionId, bucket, imageKey, imageUrl, atte
 		ExternalImageId: attendeeId, 
 		MaxFaces: 1,
 		QualityFilter: 'AUTO',
+		DetectionAttributes: ['ALL'],
 	};
 
 	try {
