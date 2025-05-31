@@ -80,22 +80,28 @@ export class AttendanceService {
 
     }
 
-    async fetchPaginatedAttendanceServices(page: number, limit: number, search: string): Promise<{ serviceAttendances: ServiceAttendance[]; }> {
+    async fetchPaginatedAttendanceServices(page: number, limit: number, filters: any): Promise<{ serviceAttendances: ServiceAttendance[]; }> {
         const skip = (page - 1) * limit;
 
         const query: any = {};
-
-        if (search) {
-            const regex = new RegExp(search, 'i');
-            query.$or = [
-                { campusName: { $regex: regex } },
-                { serviceName: { $regex: regex } },
-                { campusId: { $regex: regex } },
-                { serviceId: { $regex: regex } },
-            ];
+        
+        // Handle specific field filters
+        if (filters.campusId) {
+            query.campusId = filters.campusId;
         }
-
-
+        
+        if (filters.campusName) {
+            query.campusName = new RegExp(filters.campusName, 'i');
+        }
+        
+        if (filters.serviceName) {
+            query.serviceName = new RegExp(filters.serviceName, 'i');
+        }
+        
+        if (filters.serviceId) {
+            query.serviceId = filters.serviceId;
+        }
+        
         const serviceAttendances = await ServiceAttendanceModel.find(query).sort({createdAt: -1}).skip(skip).limit(limit);
 
         return { serviceAttendances };

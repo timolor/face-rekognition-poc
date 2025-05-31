@@ -44,9 +44,21 @@ export class AttendanceController {
     const page = parseInt(req.query.page as string) || 1;
     const limit = parseInt(req.query.limit as string) || 10;
     const search = req.query.search as string;
+    const campusId = req.query.campusId as string;
+    const campusName = req.query.campusName as string;
+    const serviceName = req.query.serviceName as string;
+    const serviceId = req.query.serviceId as string;
+
+    const filters = {
+      search,
+      campusId,
+      campusName,
+      serviceName,
+      serviceId
+    };
 
     try {
-      const { serviceAttendances } = await this.attendanceService.fetchPaginatedAttendanceServices(page, limit, search);
+      const { serviceAttendances } = await this.attendanceService.fetchPaginatedAttendanceServices(page, limit, filters);
 
       const data = {
         serviceAttendances,
