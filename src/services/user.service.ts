@@ -7,6 +7,7 @@ import ServiceAttendanceModel, {  } from "../models/service-attendance";
 
 const COZA_API_BASE_URL = process.env.COZA_API_BASE_URL || "http://localhost:7003/api/v1/"
 const COZA_API_JWT = process.env.COZA_API_JWT!;
+const COZA_WORKFORCE_API_BASE_URL = process.env.COZA_WORKFORCE_API_BASE_URL || "https://cozaapp.coza.org.ng/api/";
 const collectionId = process.env.REKOGNITION_COLLECTION_ID!;
 
 
@@ -61,7 +62,17 @@ export class UserService {
             user.status = matchAttendeeIds.has(user._id.toString());
         }
 
-        return users
+        // Fetch users from external attendance system
+        const externalAttendees = await this.fetchExternalAttendees(serviceId, campusId);
+        
+        // Filter out users who already exist in the current users list (by email)
+        const existingEmails = new Set(users.map(user => user.email));
+        const filteredExternalAttendees = externalAttendees.filter(attendee => !existingEmails.has(attendee.email));
+        
+        // Merge the lists
+        const allUsers = [...users, ...filteredExternalAttendees];
+
+        return allUsers
     }
 
     async updateIndexedMember(userId: string, faceId: string): Promise<IUser[]> {
@@ -116,5 +127,111 @@ export class UserService {
             console.error('Error fetching user list:', error);
         }
         return []
+    }
+
+    private async fetchExternalAttendees(serviceId: string, campusId: string): Promise<IUser[]> {
+        try {
+            // Fetch attendances from workforce app
+            const attendanceConfig = {
+                method: 'get',
+                url: `${COZA_WORKFORCE_API_BASE_URL}attendance/getAttendanceByServiceIdAndCampusId/${serviceId}/${campusId}`,
+                headers: {
+                    'accept': '*/*'
+                }
+            };
+
+            const attendanceResponse = await axios.request(attendanceConfig);
+            
+            if (attendanceResponse.status !== 200 || !attendanceResponse.data.isSuccessful) {
+                console.log('No external attendances found or error occurred');
+                return [];
+            }
+
+            const attendances = attendanceResponse.data.data;
+            
+            // Filter attendances with status PRESENT or LATE 
+            const validAttendances = attendances.filter((attendance: any) => 
+                attendance.status === 'PRESENT' || attendance.status === 'LATE'
+            );
+
+            if (validAttendances.length === 0) {
+                return [];
+            }
+
+            const userIdList = validAttendances.map((attendance: any) => attendance.userId as string);
+            const userIds: string[] = [...new Set<string>(userIdList)];
+
+            const externalUsers: IUser[] = await this.fetchUsersBatch(userIds);
+            
+            return externalUsers;
+            
+        } catch (error) {
+            console.error('Error fetching external attendees:', error);
+            return [];
+        }
+    }
+
+    private async fetchUsersBatch(userIds: string[]): Promise<IUser[]> {
+       
+        const externalUsers: IUser[] = [];
+        const concurrencyLimit = 5; // Limit concurrent requests
+        
+        for (let i = 0; i < userIds.length; i += concurrencyLimit) {
+            const batch = userIds.slice(i, i + concurrencyLimit);
+            const promises = batch.map(async (userId) => {
+                try {
+                    const userConfig = {
+                        method: 'get',
+                        url: `${COZA_WORKFORCE_API_BASE_URL}account/user/${userId}`,
+                        headers: {
+                            'accept': '*/*'
+                        }
+                    };
+
+                    const userResponse = await axios.request(userConfig);
+                    
+                    if (userResponse.status === 200 && userResponse.data.isSuccessful) {
+                        return this.mapUserData(userResponse.data.data);
+                    }
+                } catch (userError) {
+                    console.error(`Error fetching user ${userId}:`, userError);
+                }
+                return null;
+            });
+
+            const results = await Promise.all(promises);
+            externalUsers.push(...results.filter(user => user !== null) as IUser[]);
+        }
+
+        return externalUsers;
+    }
+
+    private mapUserData(userData: any): IUser {
+        return {
+            _id: userData.userId as any,
+            id: userData.userId,
+            first_name: userData.firstName || '',
+            last_name: userData.lastName || '',
+            username: userData.email || '',
+            email: userData.email || '',
+            gender: userData.gender || '',
+            phone: userData.phoneNumber || '',
+            password: '', 
+            occupation: userData.occupation || '',
+            referred_by: '',
+            isActive: userData.isActivated || false,
+            isFaceIndexed: false,
+            online: false,
+            status: true, // Mark as present since they have valid attendance
+            profile_picture: userData.pictureUrl || '',
+            location: {
+                address: userData.address || '',
+                city: '',
+                state: '',
+                country: ''
+            },
+            createdAt: new Date(userData.createdAt || Date.now()),
+            updatedAt: new Date()
+        };
     }
 }
