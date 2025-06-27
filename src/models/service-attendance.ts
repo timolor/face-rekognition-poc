@@ -13,8 +13,8 @@ export interface ServiceAttendance extends Document {
   photoUploadCount: number;
   matchCount: number;
   status: 'processing' | 'completed' | 'aborted' | 'failed';
-  matchedAttendeeIds: string[] | string;
-  unmatchedAttendeeIds: string[] | string;
+  matchedAttendeeIds: string[];
+  unmatchedAttendeeIds: string[];
 }
 
 const ServiceAttendanceSchema: Schema = new Schema(

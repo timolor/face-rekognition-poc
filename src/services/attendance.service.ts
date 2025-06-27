@@ -17,6 +17,15 @@ export class AttendanceService {
 
     async matchMembers(data: ServiceAttendanceRequest) {
 
+        const existingService = await ServiceAttendanceModel.findOne({
+            serviceId: data.serviceId,
+            campusId: data.campusId,
+          });
+
+        if (existingService) {
+            throw new HttpException(400, "A service attendance process has already been initiated for this service and campus.");
+        }
+
         const serviceAttendance = mapToServiceAttendance(data);
         const savedUser = await serviceAttendance.save();
 
@@ -25,6 +34,32 @@ export class AttendanceService {
         const resp = processImages({ bucket: data.bucket, imageKeys: imagePaths, serviceAttendanceId: savedUser._id.toString(), data });
         // const resp = processImages({filePaths: ["./src/images/face_count_test.png"], serviceAttendanceId: savedUser._id.toString(), data })
 
+    }
+
+    async updateMemberMatches(data: ServiceAttendanceRequest) {
+        const serviceAttendance = await ServiceAttendanceModel.findOne({
+            serviceId: data.serviceId,
+            campusId: data.campusId,
+        });
+    
+        if (!serviceAttendance) {
+            throw new HttpException(404, "Service attendance not found.");
+        }
+    
+        if (serviceAttendance.status === 'completed') {
+            throw new HttpException(400, "This service has already been completed and cannot be updated.");
+        }
+    
+        const imagePaths = await listImagesInBucket(data.bucket, data.folderPath);
+    
+        const resp = await processImages({
+            bucket: data.bucket,
+            imageKeys: imagePaths,
+            serviceAttendanceId: serviceAttendance._id.toString(),
+            data,
+        });
+    
+        return resp;
     }
 
     async getMembers(): Promise<IUser[]> {

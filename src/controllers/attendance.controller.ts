@@ -33,8 +33,27 @@ export class AttendanceController {
 
       const serviceAttendanceReq: ServiceAttendanceRequest = req.body;
 
-      const resp = await this.attendanceService.matchMembers(serviceAttendanceReq);
-      res.status(200).json(resp);
+      await this.attendanceService.matchMembers(serviceAttendanceReq);
+      res.status(200).json({ message: "Service attendance process initiated successfully" });
+    } catch (error) {
+      next(error);
+    }
+  }
+
+  public updateMemberMatches = async (req: Request, res: Response, next: NextFunction): Promise<void> => {
+    try {
+      const { bucket, folderPath, campusName, serviceName, serviceStartTime, serviceId, campusId } = req.body;
+      if (!bucket || !folderPath || !serviceId || !campusId) {
+        throw new HttpException(400, "One or more required fields are missing");
+      }
+
+      const serviceAttendanceReq: ServiceAttendanceRequest = req.body;
+
+      const result = await this.attendanceService.updateMemberMatches(serviceAttendanceReq);
+      res.status(200).json({
+        message: "Service attendance updated successfully",
+        unmatchedFaces: result?.unmatchedFaces || 0
+      });
     } catch (error) {
       next(error);
     }
