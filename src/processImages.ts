@@ -7,6 +7,7 @@ import ServiceAttendanceModel from './models/service-attendance';
 import { getImageBufferFromS3 } from './services/s3';
 import { extractFaceImage } from './imageUtil';
 import { getLocalImageBlob } from './getImageBlob';
+import { UserCacheService } from './services/userCache.service';
 // import { Attendee } from './models/attendee';
 
 interface IProcessImage {
@@ -33,6 +34,7 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 		}
 
 		const matchedAttendeeIds = new Set(serviceAttendance.matchedAttendeeIds.map(id => id.toString()));
+		const userCacheService = UserCacheService.getInstance();
 
 		const handleMatch = async (result: PromiseResult<Rekognition.SearchFacesByImageResponse, AWSError>) => {
 			if (result?.FaceMatches && result.FaceMatches.length > 0) {
@@ -43,15 +45,27 @@ export const processImages = async ({ bucket, imageKeys, imageUrls, filePaths, d
 						faceMatched++;
 						console.log({ matchedFaceId });
 
+						// Get user's actual campus information from cache
+						const userCampusInfo = userCacheService.getUserCampusInfo(matchedFaceId);
+						const user = userCacheService.getUserById(matchedFaceId);
+
+						if (user) {
+							console.log(`User ${user.first_name} ${user.last_name} matched from user campus: ${userCampusInfo.campusName} (${userCampusInfo.campusId})`);
+						} else {
+							console.log(`User ${matchedFaceId} not found in cache`);
+						}
+
 						const fcdb = await connectToDatabase('fc', fcdbUri);
 						const match = fcdb.collection('match');
 
 						await match.insertOne({
 							memberId: matchedFaceId,
 							serviceId: data?.serviceId,
-							campusId: data?.campusId,
+							campusId: data?.campusId, // Keep original request campus data
 							serviceName: data?.serviceName,
-							campusName: data?.campusName,
+							campusName: data?.campusName, // Keep original request campus data
+							userCampusId: userCampusInfo.campusId, // Add user's actual campus ID
+							userCampusName: userCampusInfo.campusName, // Add user's actual campus name
 							timestamp: new Date(),
 						});
 

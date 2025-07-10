@@ -2,6 +2,7 @@ import { connectToDatabase, fcdbUri } from "../config/db";
 import { HttpException } from "../errors/HttpException";
 import { indexFace } from "../indexFaces";
 import { IUser, UserResponse } from "../models/user";
+import { CampusService } from './campus.service';
 import axios, { AxiosResponse } from 'axios';
 import ServiceAttendanceModel, {  } from "../models/service-attendance";
 
@@ -106,12 +107,14 @@ export class UserService {
 
     }
 
-    private getUsers = async (page: number, pageSize: number, campusId?: string): Promise<IUser[]> => {
+    public getUsers = async (page: number, pageSize: number, campusId?: string): Promise<IUser[]> => {
+        const campusService = CampusService.getInstance();
 
         try {
             let config = {
                 method: 'get',
-                url: `${COZA_API_BASE_URL}user/list?page=${page}&pageSize=${pageSize}&campus=${campusId}`,
+                url: `${COZA_API_BASE_URL}user/list?page=${page}&pageSize=${pageSize}`,
+                // url: `${COZA_API_BASE_URL}user/list?page=${page}&pageSize=${pageSize}&campus=${campusId}`,
                 headers: {
                     'accept': '*/*',
                     'Authorization': `Bearer ${COZA_API_JWT}`
@@ -120,7 +123,19 @@ export class UserService {
 
             const response: AxiosResponse<UserResponse> = await axios.request(config);
             if (response.status === 200 && response.data.data.users.length > 0) {
-                return response.data.data.users;
+                // Enhance users with campus information from the campus field
+                const users = response.data.data.users.map(user => {
+                    const campus = user.campus;
+                    const userCampusId = campus?._id;
+                    const campusName = campus?.name;
+                    
+                    return {
+                        ...user,
+                        campusId: userCampusId || undefined,
+                        campusName: campusName || undefined
+                    };
+                });
+                return users;
             }
             throw new HttpException(404, "User not found");
         } catch (error) {

@@ -6,6 +6,8 @@ import { processImages } from './processImages';
 import userRoutes from './routes/user.routes';
 import path from 'path';
 import getImageUris from './getImageUris';
+import { UserCacheService } from './services/userCache.service';
+import { CampusService } from './services/campus.service';
 
 import express, { Request, Response, NextFunction } from 'express';
 import dotenv from 'dotenv';
@@ -25,6 +27,27 @@ const port = process.env.PORT || 3000;
 app.use(cors());
 
 connectToDefaultDatabase();
+
+// Initialize caches at startup
+const initializeCaches = async () => {
+    try {
+        // Initialize campus cache first since user cache depends on it
+        const campusService = CampusService.getInstance();
+        await campusService.initializeCampusCache();
+        console.log('Campus cache initialized successfully');
+        
+        // Then initialize user cache
+        const userCacheService = UserCacheService.getInstance();
+        await userCacheService.initializeCache();
+        console.log('User cache initialized successfully');
+    } catch (error) {
+        console.error('Failed to initialize caches:', error);
+        // Don't stop the server if cache initialization fails
+    }
+};
+
+// Initialize caches after database connection
+initializeCaches();
 
 global.counter = 1;
 

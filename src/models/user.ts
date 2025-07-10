@@ -17,6 +17,13 @@ export interface IUser {
 	online: boolean;
 	status: boolean;
 	profile_picture: string;
+	campus?: {
+		_id: string;
+		name: string;
+		location?: any;
+	};
+	campusId?: string; // Computed field for convenience
+	campusName?: string; // Computed field for convenience
 	location: {
 		address: string;
 		city: string;

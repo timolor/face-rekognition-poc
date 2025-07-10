@@ -6,6 +6,8 @@ export interface IMatch extends Document {
 	campusId: string;
 	serviceName: string;
 	campusName: string;
+	userCampusId?: string; 
+	userCampusName?: string; 
 	timestamp: Date;
 }
 
@@ -15,6 +17,8 @@ const MatchSchema: Schema = new Schema({
 	campusId: { type: String },
 	serviceName: { type: String },
 	campusName: { type: String },
+	userCampusId: { type: String }, 
+	userCampusName: { type: String }, 
 	timestamp: { type: Date, default: Date.now },
 });
 
